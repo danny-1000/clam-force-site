@@ -1,4 +1,4 @@
-const button = document.getElementById("Start");
+const button = document.getElementById("getDetails");
 const details = document.getElementById("details");
 
 button.addEventListener("click", async () => {
