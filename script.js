@@ -1,5 +1,5 @@
 const button = document.getElementById("getDetails");
-const details = document.getElementById("details");
+const details = document.getElementById("Start");
 
 button.addEventListener("click", async () => {
   try {
