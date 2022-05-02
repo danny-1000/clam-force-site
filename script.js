@@ -28,7 +28,7 @@ button.addEventListener("click", async () => {
     const batteryPercent = await batteryLevel.getUint8(11);  
 
     for(let i=0; i < 12; i++){
-      console.log(await batteryLevel.getUint8(i) + "\n");
+      console.log(await batteryLevel.getUint8(i) + i);
 
     }
     
