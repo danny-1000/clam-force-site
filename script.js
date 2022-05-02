@@ -25,7 +25,7 @@ button.addEventListener("click", async () => {
     
     // Convert recieved buffer to number
     const batteryLevel = await batteryLevelCharacteristic.readValue();
-    const batteryPercent = await batteryLevel.getUint8(10);  
+    const batteryPercent = await batteryLevel.getUint8(20);  
     
    // console.log( batteryLevel.array.ge);
 
