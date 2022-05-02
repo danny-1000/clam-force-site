@@ -51,7 +51,7 @@ button.addEventListener("click", async () => {
       // use innerHTML
       details.innerHTML = `
       Device Name - ${deviceName}<br />
-      Battery Level - ${batteryPercent}%<br />
+      Battery Level - ${batteryPercent} <br />
       Device Information:
       <ul>
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
