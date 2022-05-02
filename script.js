@@ -5,7 +5,7 @@ button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
-      optionalServices: ["battery_service", "0x18ff"],
+      optionalServices: ["battery_service", "000018ff-0000-8000-00805f9b34fb"],
       acceptAllDevices: true,
     });
 
@@ -16,7 +16,7 @@ button.addEventListener("click", async () => {
 
     // Getting the services we mentioned before through GATT server
     const batteryService = await server.getPrimaryService("battery_service");
-    const infoService = await server.getPrimaryService("0x18ff");
+    const infoService = await server.getPrimaryService("000018ff-0000-8000-00805f9b34fb");
 
     // Getting the current battery level
     const batteryLevelCharacteristic = await batteryService.getCharacteristic(
