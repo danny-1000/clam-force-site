@@ -15,12 +15,12 @@ button.addEventListener("click", async () => {
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
-    const batteryService = await server.getPrimaryService("0x2AFF");
+    const batteryService = await server.getPrimaryService("00002AFF-0000-1000-8000-00805f9b34fb");
     const infoService = await server.getPrimaryService("device_information");
 
     // Getting the current battery level
     const batteryLevelCharacteristic = await batteryService.getCharacteristic(
-      "battery_level"
+      "00002AFF-0000-1000-8000-00805f9b34fb"
     );
     // Convert recieved buffer to number
     const batteryLevel = await batteryLevelCharacteristic.readValue();
