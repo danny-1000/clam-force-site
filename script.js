@@ -15,6 +15,7 @@ button.addEventListener("click", async () => {
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
+    while(x==0){
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
     const infoService = await server.getPrimaryService("device_information");
 
@@ -25,7 +26,7 @@ button.addEventListener("click", async () => {
     console.log('running2');
     let x=0;
     // Convert recieved buffer to number
-    while(x==0){
+    
     const press = await pressureCharacteristic.readValue(); 
      
     number= await press.getUint8(0);
