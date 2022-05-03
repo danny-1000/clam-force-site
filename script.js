@@ -29,7 +29,7 @@ button.addEventListener("click", async () => {
    // const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
    // console.log(batteryPercent);
     const pressure = parseInt(char, 16);
-    console.log(pressure);
+    console.log('Pressure=' + pressure);
     for(let i=0; i < 2; i++){
       console.log(i);
       console.log(await batteryLevel.getUint8(i));
