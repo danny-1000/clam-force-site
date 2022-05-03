@@ -23,8 +23,7 @@ button.addEventListener("click", async () => {
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
 
-   const amount = await pressureCharacteristic.array.readValue();
-    console.log(new TextDecoder().decode(amount));
+   
     
     // Convert recieved buffer to number
     const pressure = await pressureCharacteristic.readValue();
@@ -34,7 +33,8 @@ button.addEventListener("click", async () => {
   //console.log(batteryLevel);
     for(let i=0; i < 2; i++){
       console.log(i);
-      console.log(await pressure.getUint8(i));
+      number= await pressure.getUint8(i);
+      console.log(number.toString(16));
     }
     
    // console.log( batteryLevel.array.ge);
