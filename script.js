@@ -25,15 +25,16 @@ button.addEventListener("click", async () => {
     console.log('running2');
     let x=0;
     // Convert recieved buffer to number
-    
+    while(x==0){
     const press = await pressureCharacteristic.readValue(); 
-    while(x==0){ 
+     
     number= await press.getUint8(0);
     hex1 = number.toString(16);
     number= await press.getUint8(1);
     hex2 = number.toString(16);
     const pressure = parseInt((hex1 + hex2), 16);
-    console.log(pressure)
+    console.log(pressure);
+    }
     /* 
     // Getting device information
     // We will get all characteristics from device_information
@@ -68,7 +69,7 @@ button.addEventListener("click", async () => {
     `;
     });
      */
-    }
+    
 
   } catch (err) {
     console.log(err);
