@@ -23,7 +23,7 @@ button.addEventListener("click", async () => {
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
 
-   const amount = await pressureCharacteristic.readValue();
+   const amount = await pressureCharacteristic.array.readValue();
     console.log(new TextDecoder().decode(amount));
     
     // Convert recieved buffer to number
