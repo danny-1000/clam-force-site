@@ -22,7 +22,10 @@ button.addEventListener("click", async () => {
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
-    console.log(pressureCharacteristic);
+
+   const amount = await pressureCharacteristic.readValue();
+    console.log(new TextDecoder().decode(amount));
+    
     // Convert recieved buffer to number
     const pressure = await pressureCharacteristic.readValue();
    // const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
