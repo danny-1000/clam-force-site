@@ -22,9 +22,10 @@ button.addEventListener("click", async () => {
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
+    console.log('running');
     let x=0;
-    while(x==0){
     // Convert recieved buffer to number
+    while(x==0){
     const press = await pressureCharacteristic.readValue();   
     number= await press.getUint8(0);
     hex1 = number.toString(16);
