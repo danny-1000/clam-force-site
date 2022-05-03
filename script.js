@@ -22,28 +22,15 @@ button.addEventListener("click", async () => {
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
-
-   
-    
+  [lbl] loop;
     // Convert recieved buffer to number
-    const press = await pressureCharacteristic.readValue();
-   // const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
-   
-    
-  //console.log(batteryLevel);
-    
-     
+    const press = await pressureCharacteristic.readValue();   
     number= await press.getUint8(0);
     hex1 = number.toString(16);
     number= await press.getUint8(1);
     hex2 = number.toString(16);
     const pressure = parseInt((hex1 + hex2), 16);
      
-        
-
-
-   // console.log( batteryLevel.array.ge);
-
     // Getting device information
     // We will get all characteristics from device_information
     const infoCharacteristics = await infoService.getCharacteristics();
@@ -76,6 +63,9 @@ button.addEventListener("click", async () => {
       </ul> 
     `;
     });
+
+    goto loop;
+
   } catch (err) {
     console.log(err);
     alert("An error occured while fetching device details");
