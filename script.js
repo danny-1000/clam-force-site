@@ -15,23 +15,23 @@ button.addEventListener("click", async () => {
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
-    const batteryService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
+    const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
     const infoService = await server.getPrimaryService("device_information");
 
     // Getting the current battery level
-    const batteryLevelCharacteristic = await batteryService.getCharacteristic(
+    const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
-    
+    console.log(pressureCharacteristics);
     // Convert recieved buffer to number
-    const batteryLevel = await batteryLevelCharacteristic.readValue();
-    const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
-    console.log(batteryLevel.value);
-    const pressure = parseInt(batteryPercent, 16);
-  console.log(batteryLevel);
+    const pressure = await pressureCharacteristic.readValue();
+   // const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
+   // console.log(batteryLevel.length);
+   // const pressure = parseInt(batteryPercent, 16);
+  //console.log(batteryLevel);
     for(let i=0; i < 2; i++){
       console.log(i);
-      console.log(await batteryLevel.getUint8(i));
+      console.log(await pressure.getUint8(i));
     }
     
    // console.log( batteryLevel.array.ge);
