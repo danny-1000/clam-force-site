@@ -26,17 +26,22 @@ button.addEventListener("click", async () => {
    
     
     // Convert recieved buffer to number
-    const pressure = await pressureCharacteristic.readValue();
+    const press = await pressureCharacteristic.readValue();
    // const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
-   // console.log(batteryLevel.length);
-   // const pressure = parseInt(batteryPercent, 16);
-  //console.log(batteryLevel);
-    for(let i=0; i < 2; i++){
-      console.log(i);
-      number= await pressure.getUint8(i);
-      console.log(number.toString(16));
-    }
+   
     
+  //console.log(batteryLevel);
+    
+     
+    number= await press.getUint8(0);
+    hex1 = console.lognumber.toString(16);
+    number= await press.getUint8(1);
+    hex2 = console.lognumber.toString(16);
+    const pressure = parseInt((hex1 + hex2), 16);
+     
+        
+
+
    // console.log( batteryLevel.array.ge);
 
     // Getting device information
