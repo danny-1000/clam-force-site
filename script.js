@@ -25,7 +25,7 @@ button.addEventListener("click", async () => {
     
     // Convert recieved buffer to number
     const batteryLevel = await batteryLevelCharacteristic.readValue();
-    const char = (batteryLevel.getElementById(0) + batteryLevel.getElementById(1)); 
+    const char = (batteryLevelCharacteristic.getElementById(0) + batteryLevelCharacteristic.getElementById(1)); 
    // const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
    // console.log(batteryPercent);
     const pressure = parseInt(char, 16);
