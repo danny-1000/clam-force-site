@@ -5,7 +5,7 @@ button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
-      optionalServices: ["000018ff-0000-1000-8000-00805f9b34fb", "device_information"],
+      optionalServices: ["cc4a6a80-51e0-11e3-b451-0002a5d5c51b", "device_information"],
       acceptAllDevices: true,
     });
 
@@ -15,19 +15,19 @@ button.addEventListener("click", async () => {
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
-    const batteryService = await server.getPrimaryService("000018ff-0000-1000-8000-00805f9b34fb");
+    const batteryService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
     const infoService = await server.getPrimaryService("device_information");
 
     // Getting the current battery level
     const batteryLevelCharacteristic = await batteryService.getCharacteristic(
-      "00002aff-0000-1000-8000-00805f9b34fb"
+      "835abac0-51e4-11e3-a5bd-0002a5d5c51b"
     );
     
     // Convert recieved buffer to number
     const batteryLevel = await batteryLevelCharacteristic.readValue();
     const batteryPercent = await batteryLevel.getUint8(11);  
 
-    for(let i=0; i < 12; i++){
+    for(let i=0; i < 1; i++){
       console.log(i);
       console.log(await batteryLevel.getUint8(i));
 
