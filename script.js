@@ -31,7 +31,7 @@ button.addEventListener("click", async () => {
     console.log(pressure);
     for(let i=0; i < 2; i++){
       console.log(i);
-      console.log(await batteryLevel.getUint8(i));
+      console.log(await batteryLevel(i));
     }
     
    // console.log( batteryLevel.array.ge);
