@@ -41,7 +41,7 @@ button.addEventListener("click", async () => {
       Pressure - ${pressure} PSI<br />
      // Device Information:
      // <ul>
-        ${infoValues.map((value) => `<li>${value}</li>`).join("")}
+     //   ${infoValues.map((value) => `<li>${value}</li>`).join("")}
      // </ul> 
     `;
     }
