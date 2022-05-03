@@ -25,7 +25,7 @@ button.addEventListener("click", async () => {
     
     // Convert recieved buffer to number
     const batteryLevel = await batteryLevelCharacteristic.readValue();
-    const batteryPercent = ( battawaiteryLevel.getUint8(0) + battawaiteryLevel.getUint8(1));  
+    const batteryPercent = (await batteryLevel.getUint8(0) + await batteryLevel.getUint8(1));  
     const pressure = parseInt(batteryPercent, 16);
     
     for(let i=0; i < 2; i++){
@@ -60,7 +60,7 @@ button.addEventListener("click", async () => {
       // use innerHTML
       details.innerHTML = `
       Device Name - ${deviceName}<br />
-      Battery Level - ${pressure}%<br />
+      Pressure - ${pressure} PSI<br />
       Device Information:
       <ul>
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
