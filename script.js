@@ -36,6 +36,14 @@ button.addEventListener("click", async () => {
     hex2 = number.toString(16);
     const pressure = parseInt((hex1 + hex2), 16);
     console.log(pressure);
+    details.innerHTML = `
+     // Device Name - ${deviceName}<br />
+      Pressure - ${pressure} PSI<br />
+     // Device Information:
+     // <ul>
+        ${infoValues.map((value) => `<li>${value}</li>`).join("")}
+     // </ul> 
+    `;
     }
     /* 
     // Getting device information
