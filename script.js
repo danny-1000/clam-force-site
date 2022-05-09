@@ -9,7 +9,7 @@ button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
-      optionalServices: ["cc4a6a80-51e0-11e3-b451-02a5d5c51b00", "device_information"],
+      optionalServices: ["cc4a6a80-51e0-11e3-b451-02a5d5c51b00"],
       acceptAllDevices: true,
     });
 
@@ -23,7 +23,7 @@ button.addEventListener("click", async () => {
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-02a5d5c51b00");
   //  const infoService = await server.getPrimaryService("device_information");
 
-    // Getting the current battery level
+    // Getting the current pressure
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
