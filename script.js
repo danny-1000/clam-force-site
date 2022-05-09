@@ -38,7 +38,8 @@ button.addEventListener("click", async () => {
     const pressure = parseInt((hex1 + hex2), 16);
     document.body.style.fontSize="60px";
     //document.write("<br><br>");
-    document.write( pressure);
+    document.write(pressure);
+    document.close();
     }
     // Convert recieved buffer to number
     
