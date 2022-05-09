@@ -9,27 +9,26 @@ button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
-      optionalServices: [battery_service],
+      optionalServices: ["battery service", "device_information"],
       acceptAllDevices: true,
     });
 
     // Connect to the GATT server
     // We also get the name of the Bluetooth device here
-   // let deviceName = device.gatt.device.name;
+    let deviceName = device.gatt.device.name;
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
     let x=0;
-    const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-02a5d5c51b00");
+    const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
   //  const infoService = await server.getPrimaryService("device_information");
 
-    // Getting the current pressure
+    // Getting the current battery level
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
     console.log('running2');
-    while(x==0){
-
+    
     const press= await pressureCharacteristic.readValue(); 
      
     number= await press.getUint8(0);
@@ -40,15 +39,15 @@ button.addEventListener("click", async () => {
     document.body.style.fontSize="60px";
     //document.write("<br><br>");
   
-    document.getElementById("Pressure=0000"); // find the list-item
-    const pressureText= "Pressure=" + pressure;
-    target.innerHTML = pressureText ; // set it's content 
+    document.getElementById("Pressure="); // find the list-item
+
+    target.innerHTML = ("Pressure=" + pressure); // set it's content 
     
 
     }
     // Convert recieved buffer to number
     
-   /*  
+     
    // console.log(pressure);
     details.innerHTML = `
       Device Name - ${deviceName}<br />
@@ -58,7 +57,7 @@ button.addEventListener("click", async () => {
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
       </ul> 
     `;
-    
+    /*
     }
      
     // Getting device information
