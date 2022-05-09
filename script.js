@@ -9,7 +9,7 @@ button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
-      optionalServices: ["cc4a6a80-51e0-11e3-b451-0002a5d5c51b", "device_information"],
+      optionalServices: ["battery service", "device_information"],
       acceptAllDevices: true,
     });
 
@@ -22,7 +22,7 @@ button.addEventListener("click", async () => {
     let x=0;
     while(x==0){
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
-    const infoService = await server.getPrimaryService("device_information");
+  //  const infoService = await server.getPrimaryService("device_information");
 
     // Getting the current battery level
     const pressureCharacteristic = await pressureService.getCharacteristic(
@@ -42,7 +42,7 @@ button.addEventListener("click", async () => {
     // Convert recieved buffer to number
     
      
-   /* console.log(pressure);
+   // console.log(pressure);
     details.innerHTML = `
       Device Name - ${deviceName}<br />
       Pressure - ${pressure} PSI<br />
@@ -51,6 +51,7 @@ button.addEventListener("click", async () => {
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
       </ul> 
     `;
+    /*
     }
      
     // Getting device information
@@ -90,6 +91,6 @@ button.addEventListener("click", async () => {
 
   } catch (err) {
     console.log(err);
-    alert("An error occured while fetching device details");
+    alert("An error occured while fetching pressure");
   }
 });
