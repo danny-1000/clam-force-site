@@ -37,8 +37,8 @@ button.addEventListener("click", async () => {
     hex2 = number.toString(16);
     const pressure = parseInt((hex1 + hex2), 16);
     document.body.style.fontSize="60px";
-    document.write(pressure);
-  
+    document.write.getElementById("body").insertAdjacentHTML('beforeend', pressure);
+    
     //document.getElementById("Pressure="); // find the list-item
 
     //target.innerHTML = ("Pressure=" + pressure); // set it's content 
