@@ -9,7 +9,7 @@ button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
-      optionalServices: ["battery_service", "device_information"],
+      optionalServices: ["battery_service", "device_information", "cc4a6a80-51e0-11e3-b451-0002a5d5c51b"],
       acceptAllDevices: true,
     });
 
