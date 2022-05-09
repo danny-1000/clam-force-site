@@ -38,7 +38,7 @@ button.addEventListener("click", async () => {
     const pressure = parseInt((hex1 + hex2), 16);
     document.body.style.fontSize="60px";
     const clampForce=1.477*pressure-428;
-    document.getElementById('printPressure').innerHTML = 'Pressure=' + pressure<br +'Clamp Force='+clampForce + ' lb';
+    document.getElementById('printPressure').innerHTML = 'Pressure=' + pressure + '<br>' +'Clamp Force='+clampForce + ' lb';
     
     }
     // Convert recieved buffer to number
