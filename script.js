@@ -40,7 +40,7 @@ button.addEventListener("click", async () => {
     document.body.style.fontSize="60px";
     //document.write("<br><br>");
   
-    document.getElementById("Pressure="); // find the list-item
+    document.getElementById("Pressure=0000"); // find the list-item
 
     target.innerHTML = ("Pressure=" + pressure); // set it's content 
     
