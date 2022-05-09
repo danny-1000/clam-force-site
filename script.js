@@ -15,7 +15,7 @@ button.addEventListener("click", async () => {
 
     // Connect to the GATT server
     // We also get the name of the Bluetooth device here
-    let deviceName = device.gatt.device.name;
+   // let deviceName = device.gatt.device.name;
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
@@ -41,14 +41,14 @@ button.addEventListener("click", async () => {
     //document.write("<br><br>");
   
     document.getElementById("Pressure=0000"); // find the list-item
-      const pressureText= "Pressure=" + pressure;
+    const pressureText= "Pressure=" + pressure;
     target.innerHTML = pressureText ; // set it's content 
     
 
     }
     // Convert recieved buffer to number
     
-     
+   /*  
    // console.log(pressure);
     details.innerHTML = `
       Device Name - ${deviceName}<br />
@@ -58,7 +58,7 @@ button.addEventListener("click", async () => {
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
       </ul> 
     `;
-    /*
+    
     }
      
     // Getting device information
