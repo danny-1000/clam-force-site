@@ -43,15 +43,15 @@ button.addEventListener("click", async () => {
     document.write("<br><br>"  + pressure + "<br><br>");
     console.log(pressure);
     details.innerHTML = `
-     // Device Name - ${deviceName}<br />
+      Device Name - ${deviceName}<br />
       Pressure - ${pressure} PSI<br />
-     // Device Information:
-     // <ul>
-     //   ${infoValues.map((value) => `<li>${value}</li>`).join("")}
-     // </ul> 
+      Device Information:
+      <ul>
+        ${infoValues.map((value) => `<li>${value}</li>`).join("")}
+      </ul> 
     `;
     }
-    /* 
+     
     // Getting device information
     // We will get all characteristics from device_information
     const infoCharacteristics = await infoService.getCharacteristics();
@@ -84,7 +84,7 @@ button.addEventListener("click", async () => {
       </ul> 
     `;
     });
-     */
+     
     
 
   } catch (err) {
