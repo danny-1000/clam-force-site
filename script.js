@@ -29,10 +29,7 @@ button.addEventListener("click", async () => {
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
     console.log('running2');
-    
-    // Convert recieved buffer to number
-    
-    const press = await pressureCharacteristic.readValue(); 
+    const press= await pressureCharacteristic.readValue(); 
      
     number= await press.getUint8(0);
     hex1 = number.toString(16);
@@ -41,7 +38,11 @@ button.addEventListener("click", async () => {
     const pressure = parseInt((hex1 + hex2), 16);
     document.body.style.fontSize="60px";
     document.write("<br><br>"  + pressure + "<br><br>");
-    console.log(pressure);
+    }
+    // Convert recieved buffer to number
+    
+     
+   /* console.log(pressure);
     details.innerHTML = `
       Device Name - ${deviceName}<br />
       Pressure - ${pressure} PSI<br />
@@ -83,7 +84,7 @@ button.addEventListener("click", async () => {
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
       </ul> 
     `;
-    });
+    });*/
      
     
 
