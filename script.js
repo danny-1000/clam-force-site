@@ -1,10 +1,10 @@
 const button = document.getElementById("getDetails");
 const details = document.getElementById("details");
-const button2 = document.getElementById("stop");
+//const button2 = document.getElementById("stop");
 
-button2.addEventListener("click", async() =>{
+//button2.addEventListener("click", async() =>{
 
-});
+//});
 button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
