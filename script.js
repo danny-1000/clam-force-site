@@ -38,8 +38,12 @@ button.addEventListener("click", async () => {
     const pressure = parseInt((hex1 + hex2), 16);
     document.body.style.fontSize="60px";
     //document.write("<br><br>");
-    document.write(pressure);
-    document.close();
+  
+    document.getElementById("Pressure="); // find the list-item
+
+    target.innerHTML = ("Pressure=" + pressure); // set it's content 
+    
+
     }
     // Convert recieved buffer to number
     
