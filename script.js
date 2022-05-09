@@ -1,6 +1,10 @@
 const button = document.getElementById("getDetails");
 const details = document.getElementById("details");
+const button2 = document.getElementById("stop");
 
+button2.addEventListener("click", async() =>{
+
+});
 button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
@@ -35,6 +39,8 @@ button.addEventListener("click", async () => {
     number= await press.getUint8(1);
     hex2 = number.toString(16);
     const pressure = parseInt((hex1 + hex2), 16);
+    document.body.style.fontSize="60px";
+    document.write("<br><br>"  + pressure + "<br><br>");
     console.log(pressure);
     details.innerHTML = `
      // Device Name - ${deviceName}<br />
