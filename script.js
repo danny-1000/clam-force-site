@@ -19,8 +19,8 @@ button.addEventListener("click", async () => {
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
-    let x=0;
-    while(x==0){
+    
+    
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
   //  const infoService = await server.getPrimaryService("device_information");
 
@@ -28,6 +28,8 @@ button.addEventListener("click", async () => {
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
+    let x=0;
+    while(x==0){
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
      
