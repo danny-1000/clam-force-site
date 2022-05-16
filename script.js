@@ -40,7 +40,8 @@ button.addEventListener("click", async () => {
   
    // hex2 = number.toString(16);
    // const pressure = parseInt(number0+number1);
-   const pressure = new String(number1.toFixed(0) + number0.toFixed(0));
+   const str = new String(number1.toFixed(0) + number0.toFixed(0));
+   const pressure = parseInt(str,16);
   
     console.log(pressure);
     document.body.style.fontSize="60px";
