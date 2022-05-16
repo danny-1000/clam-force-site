@@ -30,13 +30,17 @@ button.addEventListener("click", async () => {
     );
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
-    console.log(new TextDecoder().decode(press));
-     
-    number= await press.getUint8(0);
-    hex1 = number.toString(16);
-    number= await press.getUint8(1);
-    hex2 = number.toString(16);
-    const pressure = parseInt((hex1 + hex2), 16);
+    //console.log(press.decode());
+    var str = '';
+		for (var i=0; i<press.length; ++i) {
+			str+= String.fromCharCode(press[i]);
+		}
+    console.log(str);
+    //number= await press.getUint8(0);
+   // hex1 = number.toString(16);
+    //number= await press.getUint8(1);
+   // hex2 = number.toString(16);
+    const pressure = parseInt((str), 16);
 
     document.body.style.fontSize="60px";
     const clampForce=1.477*pressure-428;
