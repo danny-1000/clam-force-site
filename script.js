@@ -23,7 +23,7 @@ button.addEventListener("click", async () => {
     while(x==0){
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
   //  const infoService = await server.getPrimaryService("device_information");
-    console.log(pressureService);
+    //console.log(pressureService);
     // Getting the current battery level
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
@@ -33,19 +33,21 @@ button.addEventListener("click", async () => {
     //console.log(press.decode());
      // Returns a buffer
      //const value = await characteristic.readValue();
-     console.log(new TextDecoder().decode(press));
+    // console.log(new TextDecoder().decode(press));
      // Convert the buffer to string
     // infoValues.push(new TextDecoder().decode(value));
     // if (index === array.length - 1) resolve();
 	
     
    // console.log('string='+ str);
-    //number= await press.getUint8(0);
+   number= await press.getCharacteristic(0);
+   console.log(number);
+   // number= await press.getUint8(0);
    // hex1 = number.toString(16);
-    //number= await press.getUint8(1);
+   // number= await press.getUint8(1);
    // hex2 = number.toString(16);
-   str='test';
-    const pressure = parseInt((str), 16);
+   
+   // const pressure = parseInt((hex1 + hex2), 16);
 
     document.body.style.fontSize="60px";
     const clampForce=1.477*pressure-428;
