@@ -34,10 +34,10 @@ button.addEventListener("click", async () => {
     const press= await pressureCharacteristic.readValue(); 
      
     number0= await press.getUint8(0);
-    const hex0=parseInt(number0.toFixed(0));
+    const hex0=parseInt(number0.toString(16));
     
     number1= await press.getUint8(1);
-    const hex1=parseInt(number1.toFixed(0));
+    const hex1=parseInt(number1.toString(16));
     
     console.log(hex0);
     console.log(hex1);
