@@ -35,7 +35,7 @@ button.addEventListener("click", async () => {
 		for (var i=0; i<press.length; ++i) {
 			str+= String.fromCharCode(press.String());
 		}
-    console.log(str);
+    console.log('string=' +str);
     //number= await press.getUint8(0);
    // hex1 = number.toString(16);
     //number= await press.getUint8(1);
