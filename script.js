@@ -33,7 +33,7 @@ button.addEventListener("click", async () => {
     //console.log(press.decode());
      // Returns a buffer
      //const value = await characteristic.readValue();
-     console.log(new TextDecoder().decode(press));
+     console.log(new TextDecoder(press).decode(bytes));
      // Convert the buffer to string
     // infoValues.push(new TextDecoder().decode(value));
     // if (index === array.length - 1) resolve();
@@ -44,6 +44,7 @@ button.addEventListener("click", async () => {
    // hex1 = number.toString(16);
     //number= await press.getUint8(1);
    // hex2 = number.toString(16);
+   str='test';
     const pressure = parseInt((str), 16);
 
     document.body.style.fontSize="60px";
