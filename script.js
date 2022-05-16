@@ -36,12 +36,11 @@ button.addEventListener("click", async () => {
    // hex1 = number.toString(16);
    // console.log(hex1);
     number1= await press.getUint8(1);
-    console.log(number1.toFixed() + number0.toFixed(0));
+    console.log(number1.toFixed(0) + number0.toFixed(0));
   
    // hex2 = number.toString(16);
    // const pressure = parseInt(number0+number1);
-   const str = new String(number1.toFixed(0) + number0.toFixed(0));
-   const pressure = parseInt(str,16);
+   const pressure = new String(number1.toFixed(0) + number0.toFixed(0));
   
     console.log(pressure);
     document.body.style.fontSize="60px";
