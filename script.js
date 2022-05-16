@@ -31,8 +31,8 @@ button.addEventListener("click", async () => {
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
     //console.log(press.decode());
-    var str = press.length;
-		for (var i=0; i<press.length; ++i) {
+    var str ='2';
+		for (var i=0;1; ++i) {
 			str+= press.String();
 		}
     console.log('string='+ str);
