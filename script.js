@@ -31,11 +31,11 @@ button.addEventListener("click", async () => {
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
     //console.log(press.decode());
-    var str = '';
+    var str = '0';
 		for (var i=0; i<press.length; ++i) {
-			str+= String.fromCharCode(press.String());
+			str+= press.String();
 		}
-    console.log('string=' +str);
+    console.log('string='+ str);
     //number= await press.getUint8(0);
    // hex1 = number.toString(16);
     //number= await press.getUint8(1);
