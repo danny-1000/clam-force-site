@@ -37,7 +37,8 @@ button.addEventListener("click", async () => {
     number1= await press.getUint8(1);
    // hex2 = number.toString(16);
    // const pressure = parseInt(number0+number1);
-    const pressure= string(number1 + number0);
+   const pressure = new String(number1 + number0);
+  
     console.log(pressure);
     document.body.style.fontSize="60px";
     const clampForce=1.477*pressure-428;
