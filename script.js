@@ -40,7 +40,7 @@ button.addEventListener("click", async () => {
 	
     
    // console.log('string='+ str);
-   number= await press.getCharacteristic;
+   number= await press.getElementById(0);
    console.log(number);
    // number= await press.getUint8(0);
    // hex1 = number.toString(16);
