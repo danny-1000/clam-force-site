@@ -31,20 +31,15 @@ button.addEventListener("click", async () => {
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
     //console.log(press.decode());
-    var str ='2';
+     // Returns a buffer
+     //const value = await characteristic.readValue();
+     console.log(new TextDecoder().decode(press));
+     // Convert the buffer to string
+    // infoValues.push(new TextDecoder().decode(value));
+    // if (index === array.length - 1) resolve();
 	
-//const readCharacteristic = await device.readCharacteristicForService(userDataServiceUUID, heightCharacteristicUUID); // assuming the device is already connected
-//const readValueInBase64 = readCharacteristic.value;
-
-const readValueInRawBytes = Buffer.from(press, 'base64');
-
-const MostSignificantByte = readValueInRawBytes[1];
-const LeastSignificantByte = readValueInRawBytes[0];
-console.log(MostSignificantByte + LeastSignificantByte)
-
-//const heightInCentimeters = (heightMostSignificantByte << 8) | heightLeastSignificantByte;
-
-    console.log('string='+ str);
+    
+   // console.log('string='+ str);
     //number= await press.getUint8(0);
    // hex1 = number.toString(16);
     //number= await press.getUint8(1);
