@@ -41,7 +41,7 @@ button.addEventListener("click", async () => {
     
     console.log(hex0);
     console.log(hex1);
-    const str = new String(hex0 + hex1);
+    const str = new String(hex0.toString() + hex1.toString());
     const pressure = parseInt(str,16);
   
     console.log(pressure);
