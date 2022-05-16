@@ -33,7 +33,7 @@ button.addEventListener("click", async () => {
     //console.log(press.decode());
     var str = '';
 		for (var i=0; i<press.length; ++i) {
-			str+= String.fromCharCode(press[i]);
+			str+= String.fromCharCode(press.String());
 		}
     console.log(str);
     //number= await press.getUint8(0);
