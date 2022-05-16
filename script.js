@@ -33,7 +33,7 @@ button.addEventListener("click", async () => {
     //console.log(press.decode());
      // Returns a buffer
      //const value = await characteristic.readValue();
-     console.log(new TextDecoder(press).decode(bytes));
+     console.log(new TextDecoder().decode(press(0)));
      // Convert the buffer to string
     // infoValues.push(new TextDecoder().decode(value));
     // if (index === array.length - 1) resolve();
