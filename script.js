@@ -23,7 +23,7 @@ button.addEventListener("click", async () => {
     while(x==0){
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
   //  const infoService = await server.getPrimaryService("device_information");
-
+    console.log(pressureService);
     // Getting the current battery level
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
@@ -33,7 +33,7 @@ button.addEventListener("click", async () => {
     //console.log(press.decode());
      // Returns a buffer
      //const value = await characteristic.readValue();
-     console.log(new TextDecoder().decode(press(0)));
+     console.log(new TextDecoder().decode(press));
      // Convert the buffer to string
     // infoValues.push(new TextDecoder().decode(value));
     // if (index === array.length - 1) resolve();
