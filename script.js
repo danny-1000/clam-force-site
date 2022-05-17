@@ -42,7 +42,7 @@ button.addEventListener("click", async () => {
     }
     // Convert recieved buffer to number
     
-     
+    /* 
    // console.log(pressure);
     details.innerHTML = `
       Device Name - ${deviceName}<br />
@@ -52,7 +52,7 @@ button.addEventListener("click", async () => {
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
       </ul> 
     `;
-    /*
+    
     }
      
     // Getting device information
