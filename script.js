@@ -28,6 +28,8 @@ button.addEventListener("click", async () => {
     const pressureCharacteristic = await pressureService.getCharacteristic(
       "835ab4c0-51e4-11e3-a5bd-0002a5d5c51b"
     );
+    var element = document.getElementById("printPressure");
+        element.style.fontSize = "20px";
     let x=0;
     while(x==0){
     console.log('running2');
@@ -39,7 +41,8 @@ button.addEventListener("click", async () => {
     document.body.style.fontSize="60px";
     const clampForce=1.477*pressure-428;
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
-    document.getElementById('printPressure').innerHTML = 'Pressure=' + pressure ;
+
+    document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
 
     }
     // Convert recieved buffer to number
