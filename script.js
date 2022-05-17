@@ -35,10 +35,11 @@ button.addEventListener("click", async () => {
       const batteryLevel = await batteryLevelCharacteristic.readValue();
       const batteryPercent = await batteryLevel.getUint8(0);
       var element = document.getElementById("printBatteryPercent");
-      element.style.fontSize = "60px"; 
+      element.style.fontSize = "30px"; 
       document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     var element = document.getElementById("printPressure");
         element.style.fontSize = "20px";
+
     let x=0;
     while(x==0){
     console.log('running2');
