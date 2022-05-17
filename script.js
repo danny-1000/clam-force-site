@@ -42,7 +42,7 @@ button.addEventListener("click", async () => {
     console.log(number0);
     console.log(number1);
     const str = new String(number0.toString() + number1.toString());
-    const pressure = parseInt(str);
+    const pressure = parseInt(str,16);
   
     console.log(pressure);
     document.body.style.fontSize="60px";
