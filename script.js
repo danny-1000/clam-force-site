@@ -39,9 +39,9 @@ button.addEventListener("click", async () => {
     number1= await press.getUint8(1);
     //const hex1=parseInt(number1.toString(16));
     
-    console.log(number0(0));
-    console.log(number1(0));
-    const str = new String(number0(0).toString() + number1(0).toString());
+    console.log(number0);
+    console.log(number1);
+    const str = new String(number0.toString() + number1.toString());
     const pressure = parseInt(str);
   
     console.log(pressure);
