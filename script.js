@@ -32,23 +32,13 @@ button.addEventListener("click", async () => {
     while(x==0){
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
-     
     number0= await press.getUint8(0);
-    //const hex0=parseInt(number0.toString(16));
-    
     number1= await press.getUint8(1);
-    //const hex1=parseInt(number1.toString(16));
-    
-    console.log(number0);
-    console.log(number1);
     const str = new String(number0.toString(16) + number1.toString(16));
     const pressure = parseInt(str,16);
-  
-    console.log(pressure);
     document.body.style.fontSize="60px";
     const clampForce=1.477*pressure-428;
     document.getElementById('printPressure').innerHTML = 'Pressure=' + pressure + '<br>' +'Clamp Force='+clampForce.toFixed(0) + ' lb';
-    
     }
     // Convert recieved buffer to number
     
