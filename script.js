@@ -34,15 +34,15 @@ button.addEventListener("click", async () => {
     const press= await pressureCharacteristic.readValue(); 
      
     number0= await press.getUint8(0);
-    const hex0=parseInt(number0.toString(16));
+    //const hex0=parseInt(number0.toString(16));
     
     number1= await press.getUint8(1);
-    const hex1=parseInt(number1.toString(16));
+    //const hex1=parseInt(number1.toString(16));
     
-    console.log(hex0);
-    console.log(hex1);
-    const str = new String(hex0.toString() + hex1.toString());
-    const pressure = parseInt(str,16);
+    console.log(number(0));
+    console.log(number1(0));
+    const str = new String(number(0).toString() + number1(0).toString());
+    const pressure = parseInt(str);
   
     console.log(pressure);
     document.body.style.fontSize="60px";
