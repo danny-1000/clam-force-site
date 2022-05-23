@@ -58,7 +58,7 @@ button.addEventListener("click", async () => {
     const str = new String(number0.toString(16) + number1.toString(16));
     const pressure = parseInt(str,16);
     document.body.style.fontSize="60px";
-    const clampForce=(1.477*pressure-428)*info[2];
+    const clampForce=(1.477*pressure-428)*info[2]/100;
     document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
