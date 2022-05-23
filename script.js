@@ -18,6 +18,7 @@ button.addEventListener("click", async () => {
     let deviceName = device.gatt.device.name;
     const str =deviceName.String;
     const info =str.split('-');
+    console.log(inf0[0]);
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
