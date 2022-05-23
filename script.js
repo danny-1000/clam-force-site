@@ -19,7 +19,7 @@ button.addEventListener("click", async () => {
     //
     
     const server = await device.gatt.connect();
-    const str =toString(deviceName);
+    const str =toString(deviceName.String);
     console.log(str);
     const info =str.split(',');
     console.log(info[0]);
