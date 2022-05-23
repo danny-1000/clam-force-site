@@ -16,9 +16,10 @@ button.addEventListener("click", async () => {
     // Connect to the GATT server
     // We also get the name of the Bluetooth device here
     let deviceName = device.gatt.device.name;
-    const str =deviceName.String;
-    const info =str.split('-');
-    console.log(inf0[0]);
+    console.log(deviceName);
+    //const str =deviceName.toString();
+   // const info =str
+   // console.log(inf0[0]);
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
