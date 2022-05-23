@@ -52,7 +52,7 @@ button.addEventListener("click", async () => {
     let x=0;
     while(x==0){
     console.log('running2');
-    var press= await pressureCharacteristic.readValue(); 
+    const press= await pressureCharacteristic.readValue(); 
     //console.log(press);
     number0= await press.getUint8(0);
       console.log(number0);
@@ -61,7 +61,7 @@ button.addEventListener("click", async () => {
     //  console.log(number1);
     const str = new String(number0.toString(16) + number1.toString(16));
     console.log(str);
-    const pressure = parseInt(str,16);
+    var pressure = parseInt(str,16);
     if(pressure>3000){pressure=0;}
     document.body.style.fontSize="60px";
     const clampForce=(1.477*pressure-428)*info[2]/100;
