@@ -15,7 +15,9 @@ button.addEventListener("click", async () => {
 
     // Connect to the GATT server
     // We also get the name of the Bluetooth device here
-   // let deviceName = device.gatt.device.name;
+    let deviceName = device.gatt.device.name;
+    const str =deviceName.String;
+    const info =str.split('-');
     const server = await device.gatt.connect();
 
     // Getting the services we mentioned before through GATT server
@@ -49,7 +51,8 @@ button.addEventListener("click", async () => {
     const str = new String(number0.toString(16) + number1.toString(16));
     const pressure = parseInt(str,16);
     document.body.style.fontSize="60px";
-    const clampForce=1.477*pressure-428;
+    const clampForce=(1.477*pressure-428)*info[2];
+    document.getElementsById('serialNumber').innerHTML = info[0];
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
    }
