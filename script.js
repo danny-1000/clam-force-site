@@ -58,6 +58,7 @@ button.addEventListener("click", async () => {
     number1= await press.getUint8(1);
     if(number1<0){number1=0}
     const str = new String(number0.toString(16) + number1.toString(16));
+    console.log(str);
     const pressure = parseInt(str,16);
     document.body.style.fontSize="60px";
     const clampForce=(1.477*pressure-428)*info[2]/100;
