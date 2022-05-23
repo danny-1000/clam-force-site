@@ -65,9 +65,9 @@ button.addEventListener("click", async () => {
     if(pressure>3000){pressure=0;}
     document.body.style.fontSize="60px";
     const clampForce=(1.477*pressure-428)*info[2]/100;
-    if(clampForce<200){
-      clampForce=0;
-    }
+    //if(clampForce<200){
+    //  clampForce=0;
+  //  }
     document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
