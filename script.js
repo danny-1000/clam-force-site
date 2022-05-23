@@ -55,7 +55,7 @@ button.addEventListener("click", async () => {
     var press= await pressureCharacteristic.readValue(); 
     //console.log(press);
     number0= await press.getUint8(0);
-     // console.log(number0);
+      console.log(number0);
   
     number1= await press.getUint8(1);
     //  console.log(number1);
