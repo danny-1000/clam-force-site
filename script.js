@@ -19,7 +19,7 @@ button.addEventListener("click", async () => {
     //
   
     const server = await device.gatt.connect();
-    console.log(deviceName.toString());
+   // console.log(deviceName.toString());
     const str =deviceName.toString();
    // console.log(str);
     const info =str.split(',');
@@ -54,7 +54,9 @@ button.addEventListener("click", async () => {
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
     number0= await press.getUint8(0);
+    if(number0<0){number0=0}
     number1= await press.getUint8(1);
+    if(number1<0){number1=0}
     const str = new String(number0.toString(16) + number1.toString(16));
     const pressure = parseInt(str,16);
     document.body.style.fontSize="60px";
