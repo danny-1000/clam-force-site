@@ -53,7 +53,7 @@ button.addEventListener("click", async () => {
     while(x==0){
     console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
-    console.log(press);
+    //console.log(press);
     number0= await press.getUint8(0);
      // console.log(number0);
   
