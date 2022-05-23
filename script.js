@@ -17,7 +17,7 @@ button.addEventListener("click", async () => {
     // We also get the name of the Bluetooth device here
     let deviceName = device.gatt.device.name;
     //
-  
+    console.log(deviceName);
     const server = await device.gatt.connect();
     console.log(toString(deviceName));
     const str =toString(deviceName);
