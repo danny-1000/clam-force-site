@@ -12,7 +12,6 @@ button.addEventListener("click", async () => {
     // Request the Bluetooth device through browser
     let options = {
       filters:[
-       { services: ['cc4a6a80-51e0-11e3-b451-0002a5d5c51b']},
        {namePrefix: '2'}
 
       ],
