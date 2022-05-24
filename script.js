@@ -67,16 +67,16 @@ button.addEventListener("click", async () => {
 
     let x=0;
     while(x==0){
-    console.log('running2');
+   // console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
     //console.log(press);
     number0= await press.getUint8(0);
-      console.log(number0);
+     // console.log(number0);
   
     number1= await press.getUint8(1);
     //  console.log(number1);
     const str = new String(number0.toString(16) + number1.toString(16));
-    console.log(str);
+   // console.log(str);
     var pressure = parseInt(str,16);
     if(pressure>3000){pressure=0;}
     document.body.style.fontSize="60px";
@@ -84,7 +84,7 @@ button.addEventListener("click", async () => {
     if(clampForce<0){
       clampForce=0;
     }
-    document.getElementById('serialNumber').innerHTML = info[0];
+    document.getElementById('serialNumber').innerHTML = info[0]+ "ser2.1";
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
    }
