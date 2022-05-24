@@ -7,11 +7,26 @@ const details = document.getElementById("details");
 //});
 button.addEventListener("click", async () => {
   try {
+
+
     // Request the Bluetooth device through browser
-    const device = await navigator.bluetooth.requestDevice({
+    let options = {
+      filters:[
+       { services: ['cc4a6a80-51e0-11e3-b451-0002a5d5c51b']}
+
+      ],
+      optionalServices: ['battery_service','device_information']
+    }
+
+  /*  const device = await navigator.bluetooth.requestDevice({
       optionalServices: ["battery_service", "device_information", "cc4a6a80-51e0-11e3-b451-0002a5d5c51b"],
       acceptAllDevices: true,
-    });
+    });*/
+
+    const device = await navigator.bluetooth.requestDevice(options);
+
+
+
 
     // Connect to the GATT server
     // We also get the name of the Bluetooth device here
