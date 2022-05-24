@@ -6,7 +6,7 @@ button2.addEventListener("click", async() =>{
 x=1;
 });
 
-button.addEventListener("click2", async () => {
+button.addEventListener("click", async () => {
   try {
     
 
