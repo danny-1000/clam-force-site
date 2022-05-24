@@ -2,9 +2,9 @@ const button = document.getElementById("getDetails");
 //const details = document.getElementById("details");
 const button2 = document.getElementById("exit");
 let x=0;
-///button2.addEventListener("click", async() =>{
-//x=1;
-//});
+button2.addEventListener("click", async() =>{
+x=1;
+});
 
 button.addEventListener("click", async () => {
   try {
