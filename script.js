@@ -78,12 +78,14 @@ button.addEventListener("click", async () => {
     if(clampForce<0){
       clampForce=0;
     }
-    document.body.style.fontSize="30px";
-    var element = document.getElementById("printForce");
+    
+    const element = document.getElementById('printForce');
         element.style.fontSize = "60px";
-   document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
-    document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
+
+    document.body.style.fontSize="30px";
+    document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
+    document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
    }
     
