@@ -79,8 +79,8 @@ button.addEventListener("click", async () => {
       clampForce=0;
     }
     document.body.style.fontSize="30px";
-   // const element = document.getElementById('printForce');
-   // element.style.fontSize = "60px";
+    const element = document.getElementById('printForce');
+    element.style.fontSize = "60px";
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
