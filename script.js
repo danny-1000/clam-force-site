@@ -1,10 +1,10 @@
 const button = document.getElementById("getDetails");
 const details = document.getElementById("details");
-const button2 = document.getElementById("stop");
-let x=0;
-button2.addEventListener("click", async() =>{
-x=1;
-});
+//const button2 = document.getElementById("stop");
+
+//button2.addEventListener("click", async() =>{
+
+//});
 button.addEventListener("click", async () => {
   try {
     
@@ -18,7 +18,12 @@ button.addEventListener("click", async () => {
       optionalServices: ['battery_service','device_information','cc4a6a80-51e0-11e3-b451-0002a5d5c51b']
     }
 
+  
+
     const device = await navigator.bluetooth.requestDevice(options);
+
+
+
 
     // Connect to the GATT server
     // We also get the name of the Bluetooth device here
@@ -54,7 +59,7 @@ button.addEventListener("click", async () => {
       
     
 
-    x=0;
+    let x=0;
     while(x==0){
    // console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
@@ -74,15 +79,64 @@ button.addEventListener("click", async () => {
       clampForce=0;
     }
     document.body.style.fontSize="30px";
-    const element = document.getElementById('printForce');
-    element.style.fontSize = "60px";
+    var element = document.getElementById('printForce');
+        element.style.fontSize = "60px";
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
-    
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     document.getElementById('serialNumber').innerHTML = info[0];
+    
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
    }
     
+    
+    /* 
+   // console.log(pressure);
+    details.innerHTML = `
+      Device Name - ${deviceName}<br />
+      Pressure - ${pressure} PSI<br />
+      Device Information:
+      <ul>
+        ${infoValues.map((value) => `<li>${value}</li>`).join("")}
+      </ul> 
+    `;
+    
+    }
+     
+    // Getting device information
+    // We will get all characteristics from device_information
+    const infoCharacteristics = await infoService.getCharacteristics();
+      
+    console.log(infoCharacteristics);
+
+    let infoValues = [];
+
+    const promise = new Promise((resolve, reject) => {
+      infoCharacteristics.forEach(async (characteristic, index, array) => {
+        // Returns a buffer
+        const value = await characteristic.readValue();
+        console.log(new TextDecoder().decode(value));
+        // Convert the buffer to string
+        infoValues.push(new TextDecoder().decode(value));
+        if (index === array.length - 1) resolve();
+      });
+    });
+
+    promise.then(() => {
+      console.log(infoValues);
+      // Display all the information on the screen
+      // use innerHTML
+      details.innerHTML = `
+      Device Name - ${deviceName}<br />
+      Pressure - ${pressure} PSI<br />
+      Device Information:
+      <ul>
+        ${infoValues.map((value) => `<li>${value}</li>`).join("")}
+      </ul> 
+    `;
+    });*/
+     
+    
+
   } catch (err) {
     console.log(err);
     alert("An error occured while fetching pressure");
