@@ -7,7 +7,7 @@ const details = document.getElementById("details");
 //});
 button.addEventListener("click", async () => {
   try {
-
+    document.body.style.fontSize="30px";
 
     // Request the Bluetooth device through browser
     let options = {
@@ -58,8 +58,7 @@ button.addEventListener("click", async () => {
       // Convert recieved buffer to number
       const batteryLevel = await batteryLevelCharacteristic.readValue();
       const batteryPercent = await batteryLevel.getUint8(0);
-      var element = document.getElementById("printBatteryPercent");
-      element.style.fontSize = "30px"; 
+     
       document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     var element = document.getElementById("printPressure");
         element.style.fontSize = "20px";
@@ -78,11 +77,14 @@ button.addEventListener("click", async () => {
    // console.log(str);
     var pressure = parseInt(str,16);
     if(pressure>3000){pressure=0;}
-    document.body.style.fontSize="60px";
+    
    var clampForce=(1.464*pressure-483)*info[2]/100;
     if(clampForce<0){
       clampForce=0;
     }
+    var element = document.getElementById("serialNumber");
+        element.style.fontSize = "60px";
+
     document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
