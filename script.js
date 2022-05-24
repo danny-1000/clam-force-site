@@ -131,9 +131,9 @@ button.addEventListener("click", async () => {
       Device Information:
       <ul>
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
-      </ul> 
+   });  </ul> */
     `;
-    });*/
+    
      
     
 
