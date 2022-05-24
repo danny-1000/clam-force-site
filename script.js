@@ -3,8 +3,7 @@ const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 let x=0;
 button2.addEventListener("click", function(){
-x=1;
-console.log('x=1');
+document.close();
 },false);
 
 button.addEventListener("click", async () => {
@@ -57,6 +56,7 @@ button.addEventListener("click", async () => {
 
     
     while(x==0){
+      console.log(x);
    // console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
     //console.log(press);
