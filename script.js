@@ -1,10 +1,10 @@
 const button = document.getElementById("getDetails");
 //const details = document.getElementById("details");
 const button2 = document.getElementById("exit");
-let x=0;
-button2.addEventListener("click", async() =>{
-x=1;
-});
+//let x=0;
+///button2.addEventListener("click", async() =>{
+//x=1;
+//});
 
 button.addEventListener("click", async () => {
   try {
@@ -60,7 +60,7 @@ button.addEventListener("click", async () => {
       
     
 
-    
+    let x=0;
     while(x==0){
    // console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
