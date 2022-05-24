@@ -1,6 +1,6 @@
 const button = document.getElementById("getDetails");
 const details = document.getElementById("details");
-const button2 = document.getElementById("stop");
+const button2 = document.getElementById("exit");
 
 button2.addEventListener("click", async() =>{
 
