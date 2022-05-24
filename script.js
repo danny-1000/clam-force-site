@@ -2,9 +2,9 @@ const button = document.getElementById("getDetails");
 //const details = document.getElementById("details");
 const button2 = document.getElementById("exit");
 let x=0;
-button2.addEventListener("click", async() =>{
+button2.addEventListener("click", function(){
 x=1;
-});
+},false);
 
 button.addEventListener("click", async () => {
   try {
@@ -19,14 +19,8 @@ button.addEventListener("click", async () => {
       optionalServices: ['battery_service','device_information','cc4a6a80-51e0-11e3-b451-0002a5d5c51b']
     }
 
-  
-
     const device = await navigator.bluetooth.requestDevice(options);
-
-
-
-
-    // Connect to the GATT server
+   // Connect to the GATT server
     // We also get the name of the Bluetooth device here
     let deviceName = device.gatt.device.name;
     //
