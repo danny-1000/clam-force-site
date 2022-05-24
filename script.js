@@ -1,12 +1,12 @@
 const button = document.getElementById("getDetails");
-const details = document.getElementById("details");
+//const details = document.getElementById("details");
 const button2 = document.getElementById("exit");
 let x=0;
 button2.addEventListener("click", async() =>{
 x=1;
 });
 
-button.addEventListener("click", async () => {
+button.addEventListener("click2", async () => {
   try {
     
 
@@ -81,7 +81,7 @@ button.addEventListener("click", async () => {
     }
     document.body.style.fontSize="30px";
     const element = document.getElementById('printForce');
-   // element.style.fontSize = "60px";
+    element.style.fontSize = "60px";
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
