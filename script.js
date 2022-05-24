@@ -60,8 +60,7 @@ button.addEventListener("click", async () => {
       const batteryPercent = await batteryLevel.getUint8(0);
      
       document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
-    var element = document.getElementById("printPressure");
-        element.style.fontSize = "20px";
+    
 
     let x=0;
     while(x==0){
