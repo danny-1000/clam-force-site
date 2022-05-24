@@ -1,10 +1,11 @@
 const button = document.getElementById("getDetails");
 const details = document.getElementById("details");
-//const button2 = document.getElementById("stop");
+const button2 = document.getElementById("stop");
 
-//button2.addEventListener("click", async() =>{
+button2.addEventListener("click", async() =>{
 
-//});
+});
+let x=0;
 button.addEventListener("click", async () => {
   try {
     
@@ -59,7 +60,7 @@ button.addEventListener("click", async () => {
       
     
 
-    let x=0;
+    
     while(x==0){
    // console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
@@ -79,61 +80,17 @@ button.addEventListener("click", async () => {
       clampForce=0;
     }
     document.body.style.fontSize="30px";
-    var element = document.getElementById('printForce');
-        element.style.fontSize = "60px";
+    const element = document.getElementById('printForce');
+   // element.style.fontSize = "60px";
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
+    
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     document.getElementById('serialNumber').innerHTML = info[0];
-    
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
    }
     
-    
-    /* 
-   // console.log(pressure);
-    details.innerHTML = `
-      Device Name - ${deviceName}<br />
-      Pressure - ${pressure} PSI<br />
-      Device Information:
-      <ul>
-        ${infoValues.map((value) => `<li>${value}</li>`).join("")}
-      </ul> 
-    `;
-    
-    }
-     
-    // Getting device information
-    // We will get all characteristics from device_information
-    const infoCharacteristics = await infoService.getCharacteristics();
-      
-    console.log(infoCharacteristics);
 
-    let infoValues = [];
-
-    const promise = new Promise((resolve, reject) => {
-      infoCharacteristics.forEach(async (characteristic, index, array) => {
-        // Returns a buffer
-        const value = await characteristic.readValue();
-        console.log(new TextDecoder().decode(value));
-        // Convert the buffer to string
-        infoValues.push(new TextDecoder().decode(value));
-        if (index === array.length - 1) resolve();
-      });
-    });
-
-    promise.then(() => {
-      console.log(infoValues);
-      // Display all the information on the screen
-      // use innerHTML
-      details.innerHTML = `
-      Device Name - ${deviceName}<br />
-      Pressure - ${pressure} PSI<br />
-      Device Information:
-      <ul>
-        ${infoValues.map((value) => `<li>${value}</li>`).join("")}
-      </ul> 
-    `;
-    });*/
+  
      
     
 
