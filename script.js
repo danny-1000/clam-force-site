@@ -12,10 +12,11 @@ button.addEventListener("click", async () => {
     // Request the Bluetooth device through browser
     let options = {
       filters:[
-       { services: ['cc4a6a80-51e0-11e3-b451-0002a5d5c51b']}
+       { services: ['cc4a6a80-51e0-11e3-b451-0002a5d5c51b']},
+       {namePrefix: '2'}
 
       ],
-      optionalServices: ['battery_service','device_information']
+      optionalServices: ['battery_service','device_information','cc4a6a80-51e0-11e3-b451-0002a5d5c51b']
     }
 
   /*  const device = await navigator.bluetooth.requestDevice({
