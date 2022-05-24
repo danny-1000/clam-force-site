@@ -64,7 +64,7 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);
     if(pressure>3000){pressure=0;}
     document.body.style.fontSize="60px";
-   var clampForce=(1.477*pressure-428)*info[2]/100;
+   var clampForce=(1.464*pressure-483)*info[2]/100;
     if(clampForce<0){
       clampForce=0;
     }
