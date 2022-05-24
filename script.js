@@ -84,7 +84,7 @@ button.addEventListener("click", async () => {
     if(clampForce<0){
       clampForce=0;
     }
-    document.getElementById('serialNumber').innerHTML = info[0]+ "ser2.1";
+    document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
    }
