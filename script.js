@@ -3,7 +3,7 @@ const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 let x=0;
 button2.addEventListener("click", function(){
-server.disconnect();
+x=1;
 },false);
 
 button.addEventListener("click", async () => {
