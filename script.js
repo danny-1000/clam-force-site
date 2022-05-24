@@ -3,12 +3,12 @@ const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 let x=0;
 button2.addEventListener("click", function(){
-x=1;
+device.gatt.disconnect();
 },false);
 
 button.addEventListener("click", async () => {
   try {
-    
+  
 
     // Request the Bluetooth device through browser
     let options = {
