@@ -2,7 +2,6 @@ const button = document.getElementById("getDetails");
 //const details = document.getElementById("details");
 const button2 = document.getElementById("exit");
 let x=0;
-document.getElementById('button2').style.background='red';
 button2.addEventListener("click", function(){
 location.reload();
 console.log('stop');
