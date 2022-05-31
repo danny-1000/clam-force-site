@@ -4,6 +4,7 @@ const button2 = document.getElementById("exit");
 let x=0;
 button2.addEventListener("click", function(){
 location.reload();
+console.log('stop');
 },false);
 
 button.addEventListener("click", async () => {
