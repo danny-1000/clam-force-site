@@ -37,6 +37,7 @@ button.addEventListener("click", async () => {
       const batteryLevel = await batteryLevelCharacteristic.readValue();
       const batteryPercent = await batteryLevel.getUint8(0);  
       let pressOld=0;  
+      var pressDisplay=0;
     while(x==0){
       console.log(x);
     const press= await pressureCharacteristic.readValue(); 
@@ -46,8 +47,8 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);
   
     if(pressure>3000){pressure=0;}
-    let pressDisplay = pressure;
-    if((pressOld-pressure)<20){pressDisplay=pressOld}
+    
+    if((Math.abs(pressOld-pressure))>20){pressDisplay=pressure}
     pressOld=pressure;
    var clampForce=(1.464*pressDisplay-483)*info[2]/100;
     if(clampForce<0){
