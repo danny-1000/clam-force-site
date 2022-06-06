@@ -1,5 +1,4 @@
 const button = document.getElementById("getDetails");
-//const details = document.getElementById("details");
 const button2 = document.getElementById("exit");
 let x=0;
 button2.addEventListener("click", function(){
@@ -9,8 +8,6 @@ console.log('stop');
 
 button.addEventListener("click", async () => {
   try {
-  
-
     // Request the Bluetooth device through browser
     let options = {
       filters:[
@@ -19,28 +16,16 @@ button.addEventListener("click", async () => {
       ],
       optionalServices: ['battery_service','device_information','cc4a6a80-51e0-11e3-b451-0002a5d5c51b']
     }
-
     const device = await navigator.bluetooth.requestDevice(options);   //options
    // Connect to the GATT server
     // We also get the name of the Bluetooth device here
     let deviceName = device.gatt.device.name;
-    //
-   // let deviceName = ''
     const server = await device.gatt.connect();
-   // console.log(deviceName.toString());
     const str =deviceName.toString();
-   // console.log(str);
     const info =str.split(',');
-   // console.log(info[0]);
-
-    
-
-    // Getting the services we mentioned before through GATT server
-    
+    // Getting the services we mentioned before through GATT server  
     const battery_service = await server.getPrimaryService("battery_service");
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
-  //  const infoService = await server.getPrimaryService("device_information");
-
     // Getting the current battery level
     const batteryLevelCharacteristic = await battery_service.getCharacteristic(
         "battery_level"
@@ -50,28 +35,21 @@ button.addEventListener("click", async () => {
     );
       // Convert recieved buffer to number
       const batteryLevel = await batteryLevelCharacteristic.readValue();
-      const batteryPercent = await batteryLevel.getUint8(0);
-     
-      
-    
-
-    
+      const batteryPercent = await batteryLevel.getUint8(0);  
+      let pressOld=0;  
     while(x==0){
       console.log(x);
-   // console.log('running2');
     const press= await pressureCharacteristic.readValue(); 
-    //console.log(press);
     number0= await press.getUint8(0);
-     // console.log(number0);
-  
     number1= await press.getUint8(1);
-    //  console.log(number1);
     const str = new String(number0.toString(16) + number1.toString(16));
-   // console.log(str);
     var pressure = parseInt(str,16);
+  
     if(pressure>3000){pressure=0;}
-    
-   var clampForce=(1.464*pressure-483)*info[2]/100;
+    let pressDisplay = pressure;
+    if((pressOld-pressure)<20){pressDisplay=pressOld}
+    pressOld=pressure;
+   var clampForce=(1.464*pressDisplay-483)*info[2]/100;
     if(clampForce<0){
       clampForce=0;
     }
@@ -82,13 +60,8 @@ button.addEventListener("click", async () => {
     
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     document.getElementById('serialNumber').innerHTML = info[0];
-    document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
+    document.getElementById('printPressure').innerHTML = pressDisplay + ' psi' ;
    }
-    
-
-  
-     
-    
 
   } catch (err) {
     console.log(err);
