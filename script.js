@@ -47,7 +47,7 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);
   
     if(pressure>3000){pressure=3000;}
-    if(pressure<100){pressure=pressOld}
+    if(pressure<400){pressure=pressOld}
     if((Math.abs(pressOld-pressure))>20){pressDisplay=pressure}
       
     pressOld=pressure;
