@@ -46,12 +46,12 @@ button.addEventListener("click", async () => {
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);
   
-    if(pressure>3000){pressure=0;}
-    
+    if(pressure>3000){pressure=3000;}
+    if(pressure<100){pressure=pressOld}
     if((Math.abs(pressOld-pressure))>20){pressDisplay=pressure}
-      if(pressure<100){pressure=pressOld}
+      
     pressOld=pressure;
-   var clampForce=(1.464*pressDisplay-483)*info[2]/100;
+    var clampForce=(1.464*pressDisplay-483)*info[2]/100;
     if(clampForce<0){
       clampForce=0;
     }
