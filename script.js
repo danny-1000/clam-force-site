@@ -49,6 +49,7 @@ button.addEventListener("click", async () => {
     if(pressure>3000){pressure=0;}
     
     if((Math.abs(pressOld-pressure))>20){pressDisplay=pressure}
+      if(pressure<100){pressure=pressOld}
     pressOld=pressure;
    var clampForce=(1.464*pressDisplay-483)*info[2]/100;
     if(clampForce<0){
