@@ -47,7 +47,7 @@ button.addEventListener("click", async () => {
       } catch (error) {
         console.error(error);
         // expected output: ReferenceError: nonExistentFunction is not defined
-        // Note - error messages will vary depending on browser
+        // Note - error messages will vary depending on browser test
       }
        
     const str = new String(number0.toString(16) + number1.toString(16));
