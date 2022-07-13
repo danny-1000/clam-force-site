@@ -69,7 +69,7 @@ button.addEventListener("click", async () => {
     
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     document.getElementById('serialNumber').innerHTML = info[0];
-    document.getElementById('printPressure').innerHTML = pressDisplay + ' psi' ;
+    document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
    }
 
   } catch (err) {
