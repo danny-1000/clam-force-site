@@ -1,7 +1,7 @@
 const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 let x=0;
-let pressCount=2;
+let pressCount=4;
 button2.addEventListener("click", function(){
 location.reload();
 console.log('stop');
@@ -67,13 +67,14 @@ button.addEventListener("click", async () => {
     {
     pressDisplay=pressure;
     }
-    pressOld=pressure;
+    
     var clampForce=(1.3537*pressDisplay-310)*info[2]/100;
     if(clampForce<0){
       clampForce=0;
     }
     
    }
+    pressOld=pressure;
     document.body.style.fontSize="30px";
     const element = document.getElementById('printForce');
     element.style.fontSize = "60px";
