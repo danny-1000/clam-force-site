@@ -1,6 +1,7 @@
 const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 let x=0;
+let pressCount=2;
 button2.addEventListener("click", function(){
 location.reload();
 console.log('stop');
@@ -54,14 +55,25 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);
   
     if(pressure>3000){pressure=3000;}
-    if(pressure<400){pressure=pressOld}
-    if((Math.abs(pressOld-pressure))>20){pressDisplay=pressure}
-      
+    if(pressure<400)
+    {pressure=pressOld;
+     pressDisplay=0;
+     pressCount=4;        //reset when arms open
+    }
+    if((Math.abs(pressOld-pressure))<30)
+    { 
+    pressCount = pressCount-1;
+    if(pressCount==0)                  //store pressure if 4 readings below 30
+    {
+    pressDisplay=pressure;
+    }
     pressOld=pressure;
     var clampForce=(1.3537*pressDisplay-310)*info[2]/100;
     if(clampForce<0){
       clampForce=0;
     }
+    
+   }
     document.body.style.fontSize="30px";
     const element = document.getElementById('printForce');
     element.style.fontSize = "60px";
@@ -70,8 +82,7 @@ button.addEventListener("click", async () => {
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-   }
-
+  }
   } catch (err) {
     console.log(err);
     alert("An error occured while fetching pressure");
