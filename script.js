@@ -39,6 +39,7 @@ button.addEventListener("click", async () => {
       const batteryPercent = await batteryLevel.getUint8(0);  
       let pressOld=0;  
       var pressDisplay=0;
+      var clampForce=0;
     while(x==0){
       console.log(x);
       try {
@@ -66,9 +67,10 @@ button.addEventListener("click", async () => {
     if(pressCount==0)                  //store pressure if 4 readings below 30
     {
     pressDisplay=pressure;
+    clampForce=(1.3537*pressDisplay-310)*info[2]/100;
     }
     
-    var clampForce=(1.3537*pressDisplay-310)*info[2]/100;
+    
     if(clampForce<0){
       clampForce=0;
     }
