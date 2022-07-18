@@ -72,13 +72,14 @@ button.addEventListener("click", async () => {
     if(clampForce<0){
       clampForce=0;
     }
-    pressOld=pressure;
+    
    }
    else
    {
     pressCount=4;
     clampForce=0;
    }
+    pressOld=pressure;
     document.body.style.fontSize="30px";
     const element = document.getElementById('printForce');
     element.style.fontSize = "60px";
