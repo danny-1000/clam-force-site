@@ -72,7 +72,12 @@ button.addEventListener("click", async () => {
     if(clampForce<0){
       clampForce=0;
     }
-    
+    pressOld=pressure;
+   }
+   else
+   {
+    pressCount=4;
+    clampForce=0;
    }
     document.body.style.fontSize="30px";
     const element = document.getElementById('printForce');
@@ -82,7 +87,7 @@ button.addEventListener("click", async () => {
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
     document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    pressOld=pressure;
+    
   }
   } catch (err) {
     console.log(err);
