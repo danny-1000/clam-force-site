@@ -89,7 +89,7 @@ button.addEventListener("click", async () => {
     document.getElementById('printForce').innerHTML = 'Force='+clampForce.toFixed(0) + ' lb';
     
     document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
-    document.getElementById('serialNumber').innerHTML = info[0];
+   // document.getElementById('serialNumber').innerHTML = info[0];
     document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
     
   }
