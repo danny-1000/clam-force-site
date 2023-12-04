@@ -38,27 +38,27 @@ button.addEventListener("click", async () => {
       const batteryLevel = await batteryLevelCharacteristic.readValue();
       const batteryPercent = await batteryLevel.getUint8(0);  
       let pressOld=0;  
-      var pressDisplay=0;
+     // var pressDisplay=0;  removed pressDisplay
       var clampForce=0;
     while(x==0){
-      console.log(x);
+      //console.log(x);
       try {
         const press= await pressureCharacteristic.readValue();
         number0= await press.getUint8(0);
         number1= await press.getUint8(1);
       } catch (error) {
-        console.error(error);
+        //console.error(error);
         // expected output: ReferenceError: nonExistentFunction is not defined
         // Note - error messages will vary depending on browser test
       }
        
     const str = new String(number0.toString(16) + number1.toString(16));
-    var pressure = parseInt(str,16);
+    var pressure = parseInt(str,16);         //convert to integer
   
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<400)
     {pressure=pressOld;           //was pressure=pressOld
-     pressDisplay=0;
+    // pressDisplay=0;
      pressCount=2;        //reset when arms open
      clampForce=0;
     }
@@ -67,8 +67,8 @@ button.addEventListener("click", async () => {
     pressCount = pressCount-1;
     if(pressCount==0)                  //store pressure if 2 readings below 30
     {
-    pressDisplay=pressure;
-    clampForce=(1.3537*pressDisplay-310)*info[2]/100;
+   // pressDisplay=pressure;         pressDisplay not neede use pressure
+    clampForce=(1.3537*pressure-310)*info[2]/100;
     }
     
     
@@ -94,7 +94,7 @@ button.addEventListener("click", async () => {
     
   }
   } catch (err) {
-    console.log(err);
+    //console.log(err);
     alert("An error occured while fetching pressure");
   }
 });
