@@ -55,16 +55,17 @@ button.addEventListener("click", async () => {
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);
   
-    if(pressure>3000){pressure=3000;}
+    if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<400)
     {pressure=0;           //was pressure=pressOld
      pressDisplay=0;
      pressCount=1;        //reset when arms open
+     clampForce=0;
     }
     if((Math.abs(pressOld-pressure))<30)
     { 
     pressCount = pressCount-1;
-    if(pressCount==0)                  //store pressure if 4 readings below 30
+    if(pressCount==0)                  //store pressure if 1 readings below 30
     {
     pressDisplay=pressure;
     clampForce=(1.3537*pressDisplay-310)*info[2]/100;
