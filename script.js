@@ -1,7 +1,7 @@
 const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 let x=0;
-let pressCount=1;
+let pressCount=2;
 button2.addEventListener("click", function(){
 location.reload();
 console.log('stop');
@@ -59,7 +59,7 @@ button.addEventListener("click", async () => {
     if(pressure<400)
     {pressure=0;           //was pressure=pressOld
      pressDisplay=0;
-     pressCount=1;        //reset when arms open
+     pressCount=2;        //reset when arms open
      clampForce=0;
     }
     if((Math.abs(pressOld-pressure))<30)
@@ -79,7 +79,7 @@ button.addEventListener("click", async () => {
    }
    else
    {
-    pressCount=1;
+    pressCount=2;
    // clampForce=0;
    }
     pressOld=pressure;
