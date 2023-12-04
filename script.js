@@ -57,7 +57,7 @@ button.addEventListener("click", async () => {
   
     if(pressure>3000){pressure=3000;}
     if(pressure<400)
-    {pressure=pressOld;
+    {pressure=0;           //was pressure=pressOld
      pressDisplay=0;
      pressCount=1;        //reset when arms open
     }
