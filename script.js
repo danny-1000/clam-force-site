@@ -80,7 +80,7 @@ button.addEventListener("click", async () => {
    else
    {
     pressCount=1;
-    clampForce=0;
+   // clampForce=0;
    }
     pressOld=pressure;
     document.body.style.fontSize="30px";
