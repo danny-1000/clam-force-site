@@ -62,10 +62,10 @@ button.addEventListener("click", async () => {
      pressCount=2;        //reset when arms open
      clampForce=0;
     }
-    if((Math.abs(pressOld-pressure))<30)
+    if((Math.abs(pressOld-pressure))<100)
     { 
     pressCount = pressCount-1;
-    if(pressCount==0)                  //store pressure if 2 readings below 30
+    if(pressCount==0)                  //store pressure if 2 readings below 100
     {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     clampForce=(1.3537*pressure-310)*info[2]/100;
