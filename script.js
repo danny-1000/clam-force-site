@@ -58,7 +58,7 @@ button.addEventListener("click", async () => {
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<400)
     {pressure=0;           //was pressure=pressOld
-    // pressDisplay=0;
+     pressDisplay=0;
      pressCount=2;        //reset when arms open
     // clampForce=0;
     }
