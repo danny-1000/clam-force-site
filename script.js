@@ -72,9 +72,9 @@ button.addEventListener("click", async () => {
     }
     
     
-   // if(clampForce<0){
-   //   clampForce=0;
-   // }
+    if(clampForce<0){
+      clampForce=0;
+    }
     
    }
    else
