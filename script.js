@@ -63,7 +63,7 @@ button.addEventListener("click", async () => {
      clampForce=0;
     }
    // if((Math.abs(pressOld-pressure))<100)
-   if(Math.abs(pressure>pressOld)<0)
+   if(pressure>pressOld)
     { 
    // pressCount = pressCount-1;
    // if(pressCount==0)                  //store pressure if 2 readings below 100
