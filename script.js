@@ -40,6 +40,16 @@ button.addEventListener("click", async () => {
       let pressOld=0;  
      // var pressDisplay=0;  removed pressDisplay
       var clampForce=0;
+// Draw a rectangle offset from the top left corner.
+createCanvas("canvas1");
+setFillColor("red");
+rect(50, 50, 100, 200);
+
+
+
+
+
+
     while(x==0){
       //console.log(x);
       try {
@@ -56,7 +66,7 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
   
     if(pressure>3000){pressure=0;}  //was pressure=3000
-    if(pressure<400)
+    if(pressure<300)
     {pressure=0;           //was pressure=pressOld
      pressDisplay=0;
     // pressCount=2;        //reset when arms open
