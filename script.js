@@ -1,7 +1,7 @@
 const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
-//const myCanvas = document.getElementById("myCanvas");
-//const ctx = myCanvas.getContext("2d");
+const myCanvas = document.getElementById("myCanvas");
+const ctx = myCanvas.getContext("2d");
 //ctx.fillStyle = "blue";
 //ctx.fillRect(0,0, 300,100);
 
@@ -46,8 +46,8 @@ button.addEventListener("click", async () => {
      // var pressDisplay=0;  removed pressDisplay
       var clampForce=0;
     while(x==0){
-      const myCanvas = document.getElementById("myCanvas");
-      const ctx = myCanvas.getContext("2d");
+      //const myCanvas = document.getElementById("myCanvas");
+      //const ctx = myCanvas.getContext("2d");
       ctx.fillStyle = "red";
       ctx.fillRect(20,20, 250,100);
 
