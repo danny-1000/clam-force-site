@@ -53,8 +53,7 @@ button.addEventListener("click", async () => {
         // expected output: ReferenceError: nonExistentFunction is not defined
         // Note - error messages will vary depending on browser test
       }
-    ctx.fillStyle= "red";
-    ctx.fillRect(20,20, 150,100);
+    
     
     
     
@@ -76,6 +75,12 @@ button.addEventListener("click", async () => {
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     clampForce=(1.3537*pressure-310)*info[2]/100;
+    if(clampForce<300){ctx.fillStyle = "blue";}
+    if(clampForce>299 & clampForce<1000){ctx.fillStyle = "yellow";}
+    else{ctx.fillStyle ="red";}  
+       ctx.fillRect(20,20, 250,100);
+
+
     }
     
     
