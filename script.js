@@ -75,26 +75,23 @@ button.addEventListener("click", async () => {
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     clampForce=(1.3537*pressure-310)*info[2]/100;
-    
-    // Check if clampForce is low medium or high
-    if (clampForce >= 1001) {
-    ctx.fillStyle = "red";
-    } else if (clampForce >= 301) {
-    ctx.fillStyle = "yellow";
-    } 
-     else {
-    ctx.fillStyle = "blue";
-    } 
-    ctx.fillRect(20,20, 250,100);
-
-
     }
     
     
     if(clampForce<0){
       clampForce=0;
     }
-    
+    // Check if clampForce is low medium or high
+    if (clampForce >= 1001) {
+      ctx.fillStyle = "red";
+      } else if (clampForce >= 301) {
+      ctx.fillStyle = "yellow";
+      } 
+       else {
+      ctx.fillStyle = "blue";
+      } 
+      ctx.fillRect(20,20, 250,100);
+  
    //}
    //else
    //{
