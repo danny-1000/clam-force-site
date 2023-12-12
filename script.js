@@ -2,6 +2,9 @@ const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 const myCanvas = document.getElementById("myCanvas");
 const ctx = myCanvas.getContext("2d");
+ctx.fillStyle = "red";
+ctx.fillRect(20,20, 250,100);
+
 let x=0;
 let pressCount=2;
 button2.addEventListener("click", function(){
@@ -88,9 +91,9 @@ button.addEventListener("click", async () => {
     //  ctx.fillStyle = "yellow";
     //  } 
      //  else {
-      ctx.fillStyle = "red";
+    //  ctx.fillStyle = "red";
      // } 
-      ctx.fillRect(20,20, 250,100);
+     // ctx.fillRect(20,20, 250,100);
   
    //}
    //else
