@@ -1,7 +1,7 @@
 const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
-//const myCanvas = document.getElementById("myCanvas");
-//const ctx = myCanvas.getContext("2d");
+const myCanvas = document.getElementById("myCanvas");
+const ctx = myCanvas.getContext("2d");
 let x=0;
 let pressCount=2;
 button2.addEventListener("click", function(){
@@ -53,8 +53,8 @@ button.addEventListener("click", async () => {
         // expected output: ReferenceError: nonExistentFunction is not defined
         // Note - error messages will vary depending on browser test
       }
-    //ctx.fillStyle= "red";
-    //ctx.fillRect(20,20, 150,100);
+    ctx.fillStyle= "red";
+    ctx.fillRect(20,20, 150,100);
     
     
     
