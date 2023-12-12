@@ -3,7 +3,7 @@ const button2 = document.getElementById("exit");
 const myCanvas = document.getElementById("myCanvas");
 const ctx = myCanvas.getContext("2d");
 ctx.fillStyle = "red";
-ctx.fillRect(0,0, myCanvas.clientWidth,100);
+ctx.fillRect(0,0, myCanvas.clientWidth-10,100);
 
 let x=0;
 let pressCount=2;
