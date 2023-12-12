@@ -82,14 +82,14 @@ button.addEventListener("click", async () => {
       clampForce=0;
     }
     // Check if clampForce is low medium or high
-    if (clampForce >= 1001) {
-      ctx.fillStyle = "red";
-      } else if (clampForce >= 301) {
-      ctx.fillStyle = "yellow";
-      } 
-       else {
+   // if (clampForce >= 1001) {
+    //  ctx.fillStyle = "red";
+   //   } else if (clampForce >= 301) {
+    //  ctx.fillStyle = "yellow";
+    //  } 
+     //  else {
       ctx.fillStyle = "blue";
-      } 
+     // } 
       ctx.fillRect(20,20, 250,100);
   
    //}
