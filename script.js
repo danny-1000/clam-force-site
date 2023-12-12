@@ -78,7 +78,7 @@ button.addEventListener("click", async () => {
     if(clampForce<300){ctx.fillStyle = "blue";}
     if(clampForce>299 & clampForce<1000){ctx.fillStyle = "yellow";}
     else{ctx.fillStyle ="red";}  
-       ctx.fillRect(20,20, 250,100);
+    ctx.fillRect(20,20, 150,100);
 
 
     }
