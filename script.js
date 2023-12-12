@@ -48,8 +48,7 @@ button.addEventListener("click", async () => {
     while(x==0){
       //const myCanvas = document.getElementById("myCanvas");
       //const ctx = myCanvas.getContext("2d");
-      ctx.fillStyle = "red";
-      ctx.fillRect(20,20, 250,100);
+      
 
       try {
         const press= await pressureCharacteristic.readValue();
@@ -90,15 +89,15 @@ button.addEventListener("click", async () => {
     }
     
     // Check if clampForce is low medium or high
-   // if (clampForce >= 1001) {
-    //  ctx.fillStyle = "red";
-   //   } else if (clampForce >= 301) {
-    //  ctx.fillStyle = "yellow";
-    //  } 
-     //  else {
-     // ctx.fillStyle = "red";
-     // } 
-    //  ctx.fillRect(20,20, 250,100);
+    if (clampForce >= 1001) {
+      ctx.fillStyle = "red";
+      } else if (clampForce >= 301) {
+      ctx.fillStyle = "yellow";
+      } 
+       else {
+      ctx.fillStyle = "red";
+      } 
+      ctx.fillRect(20,20, 250,100);
   
    //}
    //else
