@@ -2,8 +2,8 @@ const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 const myCanvas = document.getElementById("myCanvas");
 const ctx = myCanvas.getContext("2d");
-ctx.fillStyle = "blue";
-ctx.fillRect(10,10, 289,100);
+ctx.fillStyle = "yellow";
+ctx.fillRect(10,10, 500,100);
 
 let x=0;
 let pressCount=2;
