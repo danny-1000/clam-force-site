@@ -2,7 +2,7 @@ const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 const myCanvas = document.getElementById("myCanvas");
 const ctx = myCanvas.getContext("2d");
-ctx.fillStyle = "yellow";
+ctx.fillStyle = "red";
 ctx.fillRect(0,0, myCanvas.clientWidth,100);
 
 let x=0;
