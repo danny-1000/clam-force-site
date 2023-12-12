@@ -1,5 +1,7 @@
 const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
+const myCanvas = document.getElementById("myCanvas");
+const ctx = myCanvas.getContext("2d");
 let x=0;
 let pressCount=2;
 button2.addEventListener("click", function(){
@@ -40,16 +42,6 @@ button.addEventListener("click", async () => {
       let pressOld=0;  
      // var pressDisplay=0;  removed pressDisplay
       var clampForce=0;
-// Draw a rectangle offset from the top left corner.
-createCanvas("canvas1");
-setFillColor("red");
-rect(50, 50, 100, 200);
-
-
-
-
-
-
     while(x==0){
       //console.log(x);
       try {
@@ -61,7 +53,11 @@ rect(50, 50, 100, 200);
         // expected output: ReferenceError: nonExistentFunction is not defined
         // Note - error messages will vary depending on browser test
       }
-       
+    ctx.fillStyle= "red";
+    ctx.fillRect(20,20, 150,100);
+    
+    
+    
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
   
