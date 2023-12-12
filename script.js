@@ -95,9 +95,9 @@ button.addEventListener("click", async () => {
       ctx.fillStyle = "yellow";
       } 
        else {
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "blue";
       } 
-      ctx.fillRect(20,20, 250,100);
+      ctx.fillRect(20,20, 250,250);
   
    //}
    //else
