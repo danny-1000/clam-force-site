@@ -55,9 +55,7 @@ button.addEventListener("click", async () => {
         number0= await press.getUint8(0);
         number1= await press.getUint8(1);
       } catch (error) {
-        //console.error(error);
-        // expected output: ReferenceError: nonExistentFunction is not defined
-        // Note - error messages will vary depending on browser test
+        alert("error reading pressure");
       }
     
     
@@ -69,11 +67,11 @@ button.addEventListener("click", async () => {
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
     {pressure=0;           //was pressure=pressOld
-     pressDisplay=0;
+    // pressDisplay=0;
     // pressCount=2;        //reset when arms open
      clampForce=0;
     }
-    if((Math.abs(pressOld-pressure))>100)
+    if((Math.abs(pressOld-pressure))>50)
     // if((Math.abs(pressOld-pressure))<100)
     //if(pressure>pressOld)
     { 
@@ -81,14 +79,15 @@ button.addEventListener("click", async () => {
    // if(pressCount==0)                  //store pressure if 2 readings below 100
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
-    clampForce=(1.3537*pressure-310)*info[2]/100;
-    }
+    clampForce=(.0586*(pressure^1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+    
+   // }
     
     
     if(clampForce<0){
       clampForce=0;
     }
-    
+  }
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
       ctx.fillStyle = "red";
