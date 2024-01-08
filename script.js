@@ -97,7 +97,7 @@ button.addEventListener("click", async () => {
        else {
       ctx.fillStyle = "blue";
       } 
-      ctx.fillRect(0,0, 700,250);
+      ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
   
    //}
    //else
