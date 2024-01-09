@@ -55,7 +55,7 @@ button.addEventListener("click", async () => {
         number0= await press.getUint8(0);
         number1= await press.getUint8(1);
       } catch (error) {
-        alert("error reading pressure");
+       // alert("error reading pressure");
       }
     
     
@@ -64,13 +64,13 @@ button.addEventListener("click", async () => {
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
   
-    if(pressure>3000){pressure=0;}  //was pressure=3000
-    if(pressure<300)
-    {pressure=0;           //was pressure=pressOld
+    //if(pressure>3000){pressure=0;}  //was pressure=3000
+   // if(pressure<300)
+   // {pressure=0;           //was pressure=pressOld
     // pressDisplay=0;
     // pressCount=2;        //reset when arms open
-     clampForce=0;
-    }
+    // clampForce=0;
+   // }
     if((Math.abs(pressOld-pressure))>50)
     // if((Math.abs(pressOld-pressure))<100)
     //if(pressure>pressOld)
@@ -84,9 +84,9 @@ button.addEventListener("click", async () => {
    // }
     
     
-    if(clampForce<0){
-      clampForce=0;
-    }
+   // if(clampForce<0){
+   //   clampForce=0;
+   // }
   }
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
