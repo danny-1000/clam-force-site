@@ -4,6 +4,9 @@ const myCanvas = document.getElementById("myCanvas");
 const ctx = myCanvas.getContext("2d");
 //ctx.fillStyle = "blue";
 //ctx.fillRect(0,0, 300,100);
+document.body.style.fontSize="30px";
+const element = document.getElementById('printForce');
+element.style.fontSize = "80px";
 
 let x=0;
 let pressCount=2;
@@ -41,7 +44,7 @@ button.addEventListener("click", async () => {
     );
       // Convert recieved buffer to number
       const batteryLevel = await batteryLevelCharacteristic.readValue();
-      const batteryPercent = await batteryLevel.getUint8(0);  
+      //const batteryPercent = await batteryLevel.getUint8(0);  
       let pressOld=0;  
      // var pressDisplay=0;  removed pressDisplay
       var clampForce=0;
@@ -50,14 +53,14 @@ button.addEventListener("click", async () => {
       //const ctx = myCanvas.getContext("2d");
       
 
-      try {
+     // try {
         const press= await pressureCharacteristic.readValue();
         
         number0= await press.getUint8(0);
         number1= await press.getUint8(1);
-      } catch (error) {
+    //  } catch (error) {
        // alert("error reading pressure");
-      }
+     // }
     
     
     
@@ -80,9 +83,9 @@ button.addEventListener("click", async () => {
    // if(pressCount==0)                  //store pressure if 2 readings below 100
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
-    try{
+    //try{
    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-    } catch(error) {alert("error calculating force")}
+   // } catch(error) {alert("error calculating force")}
    // }
     
     
@@ -108,9 +111,8 @@ button.addEventListener("click", async () => {
    // clampForce=0;
    //}
     pressOld=pressure;
-    document.body.style.fontSize="30px";
-    const element = document.getElementById('printForce');
-    element.style.fontSize = "80px";
+    
+    
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0);
     
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
