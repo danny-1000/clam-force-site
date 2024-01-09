@@ -84,7 +84,12 @@ button.addEventListener("click", async () => {
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     //try{
-   clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+   
+    for (let i = 0; i <100; i++) {
+      "do nothing";
+    }
+
+    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
    // } catch(error) {alert("error calculating force")}
    // }
     
