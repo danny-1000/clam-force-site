@@ -52,7 +52,7 @@ button.addEventListener("click", async () => {
 
       try {
         const press= await pressureCharacteristic.readValue();
-        if (press=='NaN'){press=0}
+        if(press<0){press=0};
         number0= await press.getUint8(0);
         number1= await press.getUint8(1);
       } catch (error) {
