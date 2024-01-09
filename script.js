@@ -69,7 +69,7 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
    
     //if(pressure>3000){pressure=0;}  //was pressure=3000
-    if(pressure<300)
+    if(pressure<300){
    // {pressure=0;           //was pressure=pressOld
     // pressDisplay=0;
      pressCount=3;        //reset when arms open
@@ -80,7 +80,7 @@ button.addEventListener("click", async () => {
     //if(pressure>pressOld)
     { 
     pressCount = pressCount-1;
-    if(pressCount==0)                  //store pressure if 2 readings below 100
+    if(pressCount==0)                  //store pressure if 3 readings above 50
     {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     //try{
@@ -88,7 +88,8 @@ button.addEventListener("click", async () => {
     
 
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-   // } catch(error) {alert("error calculating force")}
+    pressCount=3;    //reset
+    // } catch(error) {alert("error calculating force")}
     }
     
     
