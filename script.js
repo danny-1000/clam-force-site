@@ -52,7 +52,7 @@ button.addEventListener("click", async () => {
 
       try {
         const press= await pressureCharacteristic.readValue();
-        if(press<0){press=0};
+        
         number0= await press.getUint8(0);
         number1= await press.getUint8(1);
       } catch (error) {
@@ -61,10 +61,10 @@ button.addEventListener("click", async () => {
     
     
     
-    
+    try{
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
-  
+    } catch(error) {alert("error converting string to number")}
     //if(pressure>3000){pressure=0;}  //was pressure=3000
    // if(pressure<300)
    // {pressure=0;           //was pressure=pressOld
