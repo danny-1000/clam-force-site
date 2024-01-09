@@ -9,7 +9,7 @@ const element = document.getElementById('printForce');
 element.style.fontSize = "80px";
 
 let x=0;
-let pressCount=2;
+let pressCount=3;
 button2.addEventListener("click", function(){
 location.reload();
 console.log('stop');
@@ -69,29 +69,27 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
    
     //if(pressure>3000){pressure=0;}  //was pressure=3000
-   // if(pressure<300)
+    if(pressure<300)
    // {pressure=0;           //was pressure=pressOld
     // pressDisplay=0;
-    // pressCount=2;        //reset when arms open
-    // clampForce=0;
-   // }
+     pressCount=3;        //reset when arms open
+     clampForce=0;
+    }
     if((Math.abs(pressOld-pressure))>50)
     // if((Math.abs(pressOld-pressure))<100)
     //if(pressure>pressOld)
     { 
-   // pressCount = pressCount-1;
-   // if(pressCount==0)                  //store pressure if 2 readings below 100
-   // {
+    pressCount = pressCount-1;
+    if(pressCount==0)                  //store pressure if 2 readings below 100
+    {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     //try{
    
-    for (let i = 0; i <100; i++) {
-      "do nothing";
-    }
+    
 
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
    // } catch(error) {alert("error calculating force")}
-   // }
+    }
     
     
    // if(clampForce<0){
@@ -116,8 +114,6 @@ button.addEventListener("click", async () => {
    // clampForce=0;
    //}
     pressOld=pressure;
-    
-    
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0);
     
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
