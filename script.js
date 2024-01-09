@@ -108,8 +108,8 @@ button.addEventListener("click", async () => {
     pressOld=pressure;
     document.body.style.fontSize="30px";
     const element = document.getElementById('printForce');
-    element.style.fontSize = "80px";
-    document.getElementById('printForce').innerHTML = '  ' + clampForce.toFixed(0);
+    element.style.fontSize = "120px";
+    document.getElementById('printForce').innerHTML = '-----' + clampForce.toFixed(0);
     
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
