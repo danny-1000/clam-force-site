@@ -61,10 +61,10 @@ button.addEventListener("click", async () => {
     
     
     
-    try{
+    
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
-    } catch(error) {alert("error converting string to number")}
+   
     //if(pressure>3000){pressure=0;}  //was pressure=3000
    // if(pressure<300)
    // {pressure=0;           //was pressure=pressOld
@@ -80,8 +80,9 @@ button.addEventListener("click", async () => {
    // if(pressCount==0)                  //store pressure if 2 readings below 100
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
-    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-    
+    try{
+   clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+    } catch(error) {alert("error calculating force")}
    // }
     
     
