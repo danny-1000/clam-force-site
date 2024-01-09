@@ -75,12 +75,12 @@ button.addEventListener("click", async () => {
      pressCount=3;        //reset when arms open
      clampForce=0;
     }
-    if((Math.abs(pressOld-pressure))>50)
-    // if((Math.abs(pressOld-pressure))<100)
+   // if((Math.abs(pressOld-pressure))>50)
+     if((Math.abs(pressOld-pressure))<50)
     //if(pressure>pressOld)
     { 
     pressCount = pressCount-1;
-    if(pressCount==0)                  //store pressure if 3 readings above 50
+    if(pressCount==0)                  //store pressure if 3 readings below 50
     {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     //try{
@@ -92,7 +92,11 @@ button.addEventListener("click", async () => {
     // } catch(error) {alert("error calculating force")}
     }
     
-    
+    else
+   {
+    pressCount=3;
+   // clampForce=0;
+   }
    // if(clampForce<0){
    //   clampForce=0;
    // }
@@ -109,11 +113,7 @@ button.addEventListener("click", async () => {
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
   
    //}
-   //else
-   //{
-   // pressCount=2;
-   // clampForce=0;
-   //}
+   
     pressOld=pressure;
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0);
     
