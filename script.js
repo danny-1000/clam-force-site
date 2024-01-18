@@ -122,7 +122,7 @@ button.addEventListener("click", async () => {
    // clampForce=0;
    //}
     pressOld=pressure;
-    document.getElementById('printForce').innerHTML = '+' + press.String;
+    document.getElementById('printForce').innerHTML = '+' + number0.toString(16)+number1.toString(16);
     
    // document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0);
     
