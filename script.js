@@ -79,15 +79,14 @@ button.addEventListener("click", async () => {
    
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
-    {pressure=0; 
-     delay=0;          //was pressure=pressOld
+      {pressure=0;
+       pressOld=0; 
+              //was pressure=pressOld
     // pressDisplay=0;
     // pressCount=2;        //reset when arms open
     // clampForce=0;
     }
-    else{
-      delay=1000;
-    }
+   
     
     if((Math.abs(pressOld-pressure))>50)
     // if((Math.abs(pressOld-pressure))<100)
@@ -99,7 +98,7 @@ button.addEventListener("click", async () => {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     //try{
     document.getElementById('printForce').innerHTML = 'calculating';
-    await sleep(delay);
+    await sleep(1000);
     const press= await pressureCharacteristic.readValue();
         number0= await press.getUint8(0);
         number1= await press.getUint8(1); 
@@ -108,7 +107,7 @@ button.addEventListener("click", async () => {
    
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
-    {pressure=0;           //was pressure=pressOld
+    {clampForce=0;           //was pressure=pressOld
 
     }
 
@@ -146,7 +145,7 @@ button.addEventListener("click", async () => {
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    await sleep(500);
+    await sleep(1000);
   }
   } catch (err) {
     //console.log(err);
