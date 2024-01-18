@@ -9,8 +9,6 @@ const sleep = async (milliseconds) =>{
     });
 };
 
-const decoder = new TextDecoder('utf-8');
-
 //ctx.fillStyle = "blue";
 //ctx.fillRect(0,0, 300,100);
 document.body.style.fontSize="30px";
@@ -80,12 +78,12 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
    
     if(pressure>3000){pressure=0;}  //was pressure=3000
-    if(pressure<300)
-    {pressure=0;           //was pressure=pressOld
+   // if(pressure<300)
+   // {pressure=0;           //was pressure=pressOld
     // pressDisplay=0;
     // pressCount=2;        //reset when arms open
     // clampForce=0;
-    }
+   // }
     if((Math.abs(pressOld-pressure))>50)
     // if((Math.abs(pressOld-pressure))<100)
     //if(pressure>pressOld)
@@ -124,7 +122,6 @@ button.addEventListener("click", async () => {
    // clampForce=0;
    //}
     pressOld=pressure;
-    
     
     
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0);
