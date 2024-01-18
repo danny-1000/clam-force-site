@@ -85,7 +85,7 @@ button.addEventListener("click", async () => {
     // pressDisplay=0;
     // pressCount=2;        //reset when arms open
     // clampForce=0;
-   // }
+    }
     if((Math.abs(pressOld-pressure))>50)
     // if((Math.abs(pressOld-pressure))<100)
     //if(pressure>pressOld)
