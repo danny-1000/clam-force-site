@@ -2,6 +2,13 @@ const button = document.getElementById("getDetails");
 const button2 = document.getElementById("exit");
 const myCanvas = document.getElementById("myCanvas");
 const ctx = myCanvas.getContext("2d");
+
+const sleep = async (milliseconds) =>{
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+};
+
 //ctx.fillStyle = "blue";
 //ctx.fillRect(0,0, 300,100);
 document.body.style.fontSize="30px";
@@ -84,8 +91,8 @@ button.addEventListener("click", async () => {
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     //try{
-   
-   
+      document.getElementById('printForce').innerHTML = 'calculating';
+    await sleep(1000);
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
    // } catch(error) {alert("error calculating force")}
    // }
@@ -120,7 +127,7 @@ button.addEventListener("click", async () => {
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    
+    await sleep(1000);
   }
   } catch (err) {
     //console.log(err);
