@@ -62,11 +62,9 @@ button.addEventListener("click", async () => {
 
      // try {
         const press= await pressureCharacteristic.readValue();
-
-        var pressure = typeof Number(press);
         
-      //  number0= await press.getUint8(0);
-      //  number1= await press.getUint8(1);
+        number0= await press.getUint8(0);
+        number1= await press.getUint8(1);
 
       //  typeof Number(quantity)
     //  } catch (error) {
@@ -76,8 +74,8 @@ button.addEventListener("click", async () => {
     
     
     
-   // const str = new String(number0.toString(16) + number1.toString(16));
-   // var pressure = parseInt(str,16);         //convert to integer
+    const str = new String(number0.toString(16) + number1.toString(16));
+    var pressure = parseInt(str,16);         //convert to integer
    
     if(pressure>3000){pressure=0;}  //was pressure=3000
    // if(pressure<300)
@@ -95,7 +93,7 @@ button.addEventListener("click", async () => {
    // {
    // pressDisplay=pressure;         pressDisplay not neede use pressure
     //try{
-      document.getElementById('printForce').innerHTML = '*calculating';
+      document.getElementById('printForce').innerHTML = 'calculating';
     await sleep(2000);
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
    // } catch(error) {alert("error calculating force")}
