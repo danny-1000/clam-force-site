@@ -79,9 +79,9 @@ button.addEventListener("click", async () => {
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
    
-   // if(pressure>3000){pressure=0;}  //was pressure=3000
-   // if(pressure<300)
-   // {pressure=0;           //was pressure=pressOld
+    if(pressure>3000){pressure=0;}  //was pressure=3000
+    if(pressure<300)
+    {pressure=0;           //was pressure=pressOld
     // pressDisplay=0;
     // pressCount=2;        //reset when arms open
     // clampForce=0;
