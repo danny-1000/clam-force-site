@@ -54,13 +54,20 @@ button.addEventListener("click", async () => {
       let pressOld=0;  
       var clampForce=0;
     while(x==0){
-    const press= await pressureCharacteristic.readValue();
-    number0= await press.getUint8(0);
-    number1= await press.getUint8(1);
-      
-    const str = new String(number0.toString(16) + number1.toString(16));
-    var pressure = parseInt(str,16);         //convert to integer
-   
+      var i=0;
+      var ptemp=0;
+      while(i<4)
+      {  
+       const press= await pressureCharacteristic.readValue();
+           number0= await press.getUint8(0);
+           number1= await press.getUint8(1); 
+       const str = new String(number0.toString(16) + number1.toString(16));
+       var pressure = parseInt(str,16);         //convert to integer
+       
+       ptemp=ptemp+pressure;
+       i++;
+      }
+      pressure=ptemp/3;  // average 3 readings
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
       {pressure=0;
@@ -71,13 +78,9 @@ button.addEventListener("click", async () => {
     if((Math.abs(pressOld-pressure))>50)
     { 
     document.getElementById('printForce').innerHTML = 'calculating';
-    await sleep(500);
-    const press= await pressureCharacteristic.readValue();
-        number0= await press.getUint8(0);
-        number1= await press.getUint8(1); 
-    const str = new String(number0.toString(16) + number1.toString(16));
-    var pressure = parseInt(str,16);         //convert to integer
+   // await sleep(500);
    
+    
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
     {clampForce=0; }          //was pressure=pressOld
@@ -101,7 +104,7 @@ button.addEventListener("click", async () => {
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    await sleep(0);
+   // await sleep(0);
   }
   } catch (err) {
     //console.log(err);
