@@ -71,7 +71,7 @@ button.addEventListener("click", async () => {
     if((Math.abs(pressOld-pressure))>50)
     { 
     document.getElementById('printForce').innerHTML = 'calculating';
-    await sleep(1000);
+    await sleep(2000);
     const press= await pressureCharacteristic.readValue();
         number0= await press.getUint8(0);
         number1= await press.getUint8(1); 
@@ -101,7 +101,7 @@ button.addEventListener("click", async () => {
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    await sleep(1000);
+    await sleep(2000);
   }
   } catch (err) {
     //console.log(err);
