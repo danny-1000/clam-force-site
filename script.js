@@ -62,11 +62,12 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
    
    // if(pressure>3000){pressure=0;}  //was pressure=3000
-   // if(pressure<300)
-   //   {pressure=0;
+    if(pressure<300)
+      {
+        pressure=0;
    //    pressOld=0; 
-    //   clampForce=0;
-   // }
+       clampForce=0;
+    }
     
     if((Math.abs(pressOld-pressure))>50)
     { 
