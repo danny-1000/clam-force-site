@@ -83,7 +83,8 @@ button.addEventListener("click", async () => {
     if(pressure<300)
     {clampForce=0; }          //was pressure=pressOld
 
-    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;   
+    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;  
+    await sleep(2000); 
   }
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
