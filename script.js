@@ -63,13 +63,13 @@ button.addEventListener("click", async () => {
            number1= await press.getUint8(1); 
        const str = new String(number0.toString(16) + number1.toString(16));
        var pressure = parseInt(str,16);         //convert to integer
-       if(pressure<300 || pressure>3000)
+       if(pressure<300)
        {
-        i=i-1;
+        i--;
        }
        else{
         ptemp=ptemp+pressure;
-       i=i+1;
+       i++;
        }
        
       }
