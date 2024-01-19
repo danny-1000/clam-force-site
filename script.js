@@ -72,7 +72,7 @@ button.addEventListener("click", async () => {
     if((Math.abs(pressOld-pressure))>50)
     { 
     document.getElementById('printForce').innerHTML = 'calculating';
-    await sleep(2000);
+    await sleep(3000);
     const press= await pressureCharacteristic.readValue();
         number0= await press.getUint8(0);
         number1= await press.getUint8(1); 
@@ -84,7 +84,7 @@ button.addEventListener("click", async () => {
     {clampForce=0; }          //was pressure=pressOld
 
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;  
-    await sleep(3000); 
+   // await sleep(3000); 
   }
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
