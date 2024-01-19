@@ -112,10 +112,10 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
    
     //if(pressure>3000){pressure=0;}  //was pressure=3000
-    if(pressure<300)
-    {clampForce=0;           //was pressure=pressOld
+   // if(pressure<300)
+   // {clampForce=0;           //was pressure=pressOld
 
-    }
+    //}
 
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
    // } catch(error) {alert("error calculating force")}
