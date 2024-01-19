@@ -9,8 +9,7 @@ const sleep = async (milliseconds) =>{
     });
 };
 
-//ctx.fillStyle = "blue";
-//ctx.fillRect(0,0, 300,100);
+
 document.body.style.fontSize="30px";
 const element = document.getElementById('printForce');
 element.style.fontSize = "80px";
@@ -53,27 +52,12 @@ button.addEventListener("click", async () => {
       const batteryLevel = await batteryLevelCharacteristic.readValue();
       //const batteryPercent = await batteryLevel.getUint8(0);  
       let pressOld=0;  
-     // var pressDisplay=0;  removed pressDisplay
       var clampForce=0;
     while(x==0){
-      //const myCanvas = document.getElementById("myCanvas");
-      //const ctx = myCanvas.getContext("2d");
+    const press= await pressureCharacteristic.readValue();
+    number0= await press.getUint8(0);
+    number1= await press.getUint8(1);
       
-
-     // try {
-        const press= await pressureCharacteristic.readValue();
-        
-        number0= await press.getUint8(0);
-        number1= await press.getUint8(1);
-
-      //  typeof Number(quantity)
-    //  } catch (error) {
-       // alert("error reading pressure");
-     // }
-    
-    
-    
-    
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
    
@@ -81,22 +65,12 @@ button.addEventListener("click", async () => {
     if(pressure<300)
       {pressure=0;
        pressOld=0; 
-              //was pressure=pressOld
-    // pressDisplay=0;
-    // pressCount=2;        //reset when arms open
+   
       clampForce=0;
     }
-   
     
     if((Math.abs(pressOld-pressure))>50)
-    // if((Math.abs(pressOld-pressure))<100)
-    //if(pressure>pressOld)
     { 
-   // pressCount = pressCount-1;
-   // if(pressCount==0)                  //store pressure if 2 readings below 100
-   // {
-   // pressDisplay=pressure;         pressDisplay not neede use pressure
-    //try{
     document.getElementById('printForce').innerHTML = 'calculating';
     await sleep(1000);
     const press= await pressureCharacteristic.readValue();
@@ -107,18 +81,9 @@ button.addEventListener("click", async () => {
    
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
-    {clampForce=0;           //was pressure=pressOld
+    {clampForce=0; }          //was pressure=pressOld
 
-    }
-
-    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-   // } catch(error) {alert("error calculating force")}
-   // }
-    
-    
-   // if(clampForce<0){
-   //   clampForce=0;
-   // }
+    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;   
   }
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
@@ -131,17 +96,9 @@ button.addEventListener("click", async () => {
       } 
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
   
-   //}
-   //else
-   //{
-   // pressCount=2;
-   // clampForce=0;
-   //}
     pressOld=pressure;
     
-    
-    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + number0 + number1;
-    
+    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';   
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
