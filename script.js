@@ -73,11 +73,11 @@ button.addEventListener("click", async () => {
     { 
     document.getElementById('printForce').innerHTML = 'calculating';
     await sleep(1000);
-    const press= await pressureCharacteristic.readValue();
-        number0= await press.getUint8(0);
-        number1= await press.getUint8(1); 
-    const str = new String(number0.toString(16) + number1.toString(16));
-    var pressure = parseInt(str,16);         //convert to integer
+    const pressure= await pressureCharacteristic.readValue(getUint8);
+      //  number0= await press.getUint8(0);
+      //  number1= await press.getUint8(1); 
+  //  const str = new String(number0.toString(16) + number1.toString(16));
+   // var pressure = parseInt(str,16);         //convert to integer
    
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
