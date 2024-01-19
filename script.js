@@ -140,7 +140,7 @@ button.addEventListener("click", async () => {
     pressOld=pressure;
     
     
-    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0);
+    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + str;
     
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
