@@ -72,12 +72,12 @@ button.addEventListener("click", async () => {
     if((Math.abs(pressOld-pressure))>50)
     { 
     document.getElementById('printForce').innerHTML = 'calculating';
-    //await sleep(3000);
-   // const press= await pressureCharacteristic.readValue();
-    //    number0= await press.getUint8(0);
-    //    number1= await press.getUint8(1); 
-   // const str = new String(number0.toString(16) + number1.toString(16));
-   // var pressure = parseInt(str,16);         //convert to integer
+    await sleep(500);
+    const press= await pressureCharacteristic.readValue();
+        number0= await press.getUint8(0);
+        number1= await press.getUint8(1); 
+    const str = new String(number0.toString(16) + number1.toString(16));
+    var pressure = parseInt(str,16);         //convert to integer
    
     if(pressure>3000){pressure=0;}  //was pressure=3000
     if(pressure<300)
@@ -105,7 +105,7 @@ button.addEventListener("click", async () => {
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    await sleep(1000);
+    await sleep(0);
   }
   } catch (err) {
     //console.log(err);
