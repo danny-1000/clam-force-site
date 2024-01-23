@@ -110,7 +110,7 @@ button.addEventListener("click", async () => {
       
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
-    //clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
     //document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
     document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
     printFlag=0;    // set flag to print one time until reset
@@ -124,10 +124,11 @@ button.addEventListener("click", async () => {
       ctx.fillStyle = "blue";
       } 
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
+      await sleep(3000);
    }
-   else{printFlag=0}
+   else{printFlag=1}
       
-   // await sleep(3000); 
+    await sleep(3000); 
  // }
     
   
@@ -137,7 +138,7 @@ button.addEventListener("click", async () => {
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    await sleep(3000);
+    await sleep(6000);
   }
   } catch (err) {
     //console.log(err);
