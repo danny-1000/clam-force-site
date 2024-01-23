@@ -79,7 +79,7 @@ button.addEventListener("click", async () => {
     const str2 = new String(number0.toString(16) + number1.toString(16));
     var pressure2 = parseInt(str2,16);         //convert to integer
    // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
-    if(pressure>3000){pressure=0;}  //was pressure=3000
+    if(pressure2>3000){pressure2=0;}  //was pressure=3000
     document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     
     //if(pressure<300)
