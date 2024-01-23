@@ -67,6 +67,8 @@ button.addEventListener("click", async () => {
       //const batteryPercent = await batteryLevel.getUint8(0);  
       //let pressOld=0;  
       //var clampForce=0;
+      
+
     while(x==0){
     
 
@@ -76,7 +78,7 @@ button.addEventListener("click", async () => {
       
     const str2 = new String(number0.toString(16) + number1.toString(16));
     var pressure2 = parseInt(str2,16);         //convert to integer
-   
+    document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     //if(pressure>3000){pressure=0;}  //was pressure=3000
     //if(pressure<300)
     //  {
@@ -109,7 +111,7 @@ button.addEventListener("click", async () => {
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
+    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'second';
     printFlag=0;    // set flag to print one time until reset
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
