@@ -81,7 +81,7 @@ button.addEventListener("click", async () => {
     const str2 = new String(number0.toString(16) + number1.toString(16));
     var pressure2 = parseInt(str2,16);         //convert to integer
    // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
-    if(pressure2>3000){pressure2=0;}  //was pressure=3000
+    if(pressure2>3000){pressure2=3000;}  //was pressure=3000
    // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     
     //if(pressure<300)
@@ -106,15 +106,15 @@ button.addEventListener("click", async () => {
    // {clampForce=0; 
    //  pressure=0;
    // } 
-   if (pressure2>100){printFlag=1}
-   if(pressure2<101 && printFlag==1){
+   if (pressure2>200){printFlag=1}
+   if(pressure2<201 && printFlag==1){
     const press= await pressureCharacteristic.readValue();
     number0= await press.getUint8(0);
     number1= await press.getUint8(1);
       
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
-    if(pressure>3000){pressure=0;}
+    if(pressure>3000){pressure=3000;}
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
    // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
