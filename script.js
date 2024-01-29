@@ -32,12 +32,14 @@ button.addEventListener("click", async () => {
       optionalServices: ['battery_service','device_information','cc4a6a80-51e0-11e3-b451-0002a5d5c51b']
     }
     const device = await navigator.bluetooth.requestDevice(options);   //options
+    
    // Connect to the GATT server
     // We also get the name of the Bluetooth device here
     let deviceName = device.gatt.device.name;
+   
     const server = await device.gatt.connect();
     const str =deviceName.toString();
-    const info =str.split(',');
+    const info =str.split(',');    // used in calculation of clampForce.  Calibrate force 
     // Getting the services we mentioned before through GATT server  
     //const battery_service = await server.getPrimaryService("battery_service");
     const pressureService = await server.getPrimaryService("cc4a6a80-51e0-11e3-b451-0002a5d5c51b");
@@ -80,7 +82,7 @@ button.addEventListener("click", async () => {
     var pressure2 = parseInt(str2,16);         //convert to integer
    // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     if(pressure2>3000){pressure2=0;}  //was pressure=3000
-    document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
+   // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     
     //if(pressure<300)
     //  {
@@ -104,8 +106,8 @@ button.addEventListener("click", async () => {
    // {clampForce=0; 
    //  pressure=0;
    // } 
-   
-   if(pressure2<100 && printFlag==1){
+   if (pressure2>100){printFlag=1}
+   if(pressure2<101 && printFlag==1){
     const press= await pressureCharacteristic.readValue();
     number0= await press.getUint8(0);
     number1= await press.getUint8(1);
@@ -114,8 +116,8 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
     if(pressure>3000){pressure=0;}
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-    //document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
-    document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
+    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
+   // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
     printFlag=0;    // set flag to print one time until reset
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
@@ -127,9 +129,9 @@ button.addEventListener("click", async () => {
       ctx.fillStyle = "blue";
       } 
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-      await sleep(3000);
+      await sleep(1000);
    }
-   else{printFlag=1}
+   
       
     await sleep(1000); 
  // }
