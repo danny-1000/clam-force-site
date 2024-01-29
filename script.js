@@ -107,7 +107,8 @@ button.addEventListener("click", async () => {
    //  pressure=0;
    // } 
    if (pressure2>200){printFlag=1}
-   if(pressure2<201 && printFlag==1){
+   if(pressure2<101){
+   //if(pressure2<201 && printFlag==1){
     const press= await pressureCharacteristic.readValue();
     number0= await press.getUint8(0);
     number1= await press.getUint8(1);
@@ -118,7 +119,7 @@ button.addEventListener("click", async () => {
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
    // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
-    printFlag=1;    // set flag to print one time until reset
+    printFlag=0;    // set flag to print one time until reset
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
       ctx.fillStyle = "red";
