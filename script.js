@@ -82,7 +82,7 @@ button.addEventListener("click", async () => {
     var pressure2 = parseInt(str2,16);         //convert to integer
    // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     if(pressure2>3000){pressure2=3000;}  //was pressure=3000
-    document.getElementById('printForce').innerHTML = '+' + pressure2 ;
+    //document.getElementById('printForce').innerHTML = '+' + pressure2 ;
     
     //if(pressure<300)
     //  {
