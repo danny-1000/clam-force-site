@@ -13,7 +13,7 @@ let printFlag=1;
 document.body.style.fontSize="30px";
 const element = document.getElementById('printForce');
 element.style.fontSize = "80px";
-let delay=2000;
+//let delay=2000;
 let x=0;
 let pressCount=2;
 button2.addEventListener("click", function(){
