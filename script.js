@@ -129,11 +129,11 @@ button.addEventListener("click", async () => {
       ctx.fillStyle = "blue";
       } 
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-      await sleep(1000);
+      //await sleep(1000);
    }
    
       
-    await sleep(1000); 
+   // await sleep(1000); 
  // }
     
   
@@ -143,7 +143,7 @@ button.addEventListener("click", async () => {
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
-    await sleep(6000);
+   // await sleep(6000);
   }
   } catch (err) {
     //console.log(err);
