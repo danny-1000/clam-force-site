@@ -112,8 +112,8 @@ button.addEventListener("click", async () => {
    if(pressure2<201 && printFlag==1){
     await sleep(1000);
    const press= await pressureCharacteristic.readValue();
-    number0= await press.getint8(0);
-    number1= await press.getint8(1);
+    number0= await press.getUint8(0);
+    number1= await press.getUint8(1);
       
     const str = new String(number0.toString(16) + number1.toString(16));
     var pressure = parseInt(str,16);         //convert to integer
