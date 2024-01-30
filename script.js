@@ -119,9 +119,17 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
     if(pressure>3000){pressure=3000;}
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+    if(clamForce<300)
+    {
+    printFlag=1;
+    }
+    else{
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
-   // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
     printFlag=0;    // set flag to print one time until reset
+    }
+    
+   // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
+    
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
       ctx.fillStyle = "red";
