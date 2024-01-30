@@ -121,7 +121,15 @@ button.addEventListener("click", async () => {
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
    // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
+   if(clampForce<300) 
+   {
+    printFlag=1;
+   }
+   else{
     printFlag=0;    // set flag to print one time until reset
+   }
+   
+  // printFlag=0;    // set flag to print one time until reset
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
       ctx.fillStyle = "red";
@@ -132,7 +140,7 @@ button.addEventListener("click", async () => {
       ctx.fillStyle = "blue";
       } 
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-      //await sleep(1000);
+      await sleep(2000);
    }
    
       
