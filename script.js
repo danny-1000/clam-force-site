@@ -109,7 +109,7 @@ button.addEventListener("click", async () => {
    if (pressure2>200)
    {printFlag=1}
   // if(pressure2<201){
-   if(pressure2<75 && printFlag==1){
+   if(pressure2<50 && printFlag==1){
    // await sleep(2000);
    const press= await pressureCharacteristic.readValue();
     number0= await press.getUint8(0);
