@@ -107,11 +107,19 @@ button.addEventListener("click", async () => {
    //  pressure=0;
    // } 
    if (pressure2>200)
-   {printFlag=1}
+   {printFlag=1
+    ctx.fillStyle = "grey";
+    ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
+    clampForce=0;
+    }
   // if(pressure2<201){
    if(pressure2<50 && printFlag==1){
    // await sleep(2000);
-   const press= await pressureCharacteristic.readValue();
+   ctx.fillStyle = "green";
+   ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
+   clampForce=0;
+   while(clampForce<100){
+    const press= await pressureCharacteristic.readValue();
     number0= await press.getUint8(0);
     number1= await press.getUint8(1);
       
@@ -120,7 +128,7 @@ button.addEventListener("click", async () => {
     
     if(pressure>3000){pressure=3000;}
     clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-    
+  } 
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
    // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
    //if(clampForce<300) 
@@ -133,9 +141,9 @@ button.addEventListener("click", async () => {
    
   // printFlag=0;    // set flag to print one time until reset
     // Check if clampForce is low medium or high
-    if (clampForce >= 1001) {
+    if (clampForce >= 1300) {
       ctx.fillStyle = "red";
-      } else if (clampForce >= 301) {
+      } else if (clampForce >= 800) {
       ctx.fillStyle = "yellow";
       } 
        else {
