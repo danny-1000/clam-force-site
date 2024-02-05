@@ -17,9 +17,9 @@ element.style.fontSize = "80px";
 let x=0;
 let pressCount=2;
 button2.addEventListener("click", function(){
-//location.reload();
-device.gatt.disconnect();
-//console.log('stop');
+location.reload();
+//device.gatt.disconnect();
+console.log('stop');
 },false);
 
 button.addEventListener("click", async () => {
