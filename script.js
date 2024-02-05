@@ -83,35 +83,12 @@ button.addEventListener("click", async () => {
     var pressure2 = parseInt(str2,16);         //convert to integer
    // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     if(pressure2>3000){pressure2=3000;}  //was pressure=3000
-    //document.getElementById('printForce').innerHTML = '+' + pressure2 ;
-    
-    //if(pressure<300)
-    //  {
-     //   pressure=0;
-     //  pressOld=0; 
-     //  clampForce=0;
-   // }
-    
-   // if((Math.abs(pressOld-pressure))>50)
-   // { 
-   // document.getElementById('printForce').innerHTML = 'calculating';
-   // await sleep(2000);
-   // const press= await pressureCharacteristic.readValue();
-     //   number0= await press.getUint8(0);
-     //   number1= await press.getUint8(1); 
-  //  const str = new String(number0.toString(16) + number1.toString(16));
-   // var pressure = parseInt(str,16);         //convert to integer
-   
-   // if(pressure>3000){pressure=0;}  //was pressure=3000
-   // if(pressure<300)
-   // {clampForce=0; 
-   //  pressure=0;
-   // } 
+     
    if (pressure2>200)
    {printFlag=1
     ctx.fillStyle = "grey";
     ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-    clampForce=0;
+    //clampForce=0;
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
     }
   // if(pressure2<201){
