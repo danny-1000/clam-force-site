@@ -17,7 +17,7 @@ element.style.fontSize = "80px";
 let x=0;
 let pressCount=2;
 button2.addEventListener("click", function(){
-location.reload();
+//location.reload();
 console.log('stop');
 },false);
 
