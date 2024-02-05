@@ -111,6 +111,7 @@ button.addEventListener("click", async () => {
     ctx.fillStyle = "grey";
     ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
     clampForce=0;
+    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
     }
   // if(pressure2<201){
    if(pressure2<50 && printFlag==1){
