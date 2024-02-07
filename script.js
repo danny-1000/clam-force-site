@@ -88,7 +88,7 @@ button.addEventListener("click", async () => {
    {printFlag=1
     ctx.fillStyle = "grey";
     ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-    //clampForce=0;
+    clampForce=0;
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
     }
   // if(pressure2<201){
@@ -96,7 +96,7 @@ button.addEventListener("click", async () => {
    // await sleep(2000);
    ctx.fillStyle = "green";
    ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-   clampForce=0;
+   //clampForce=0;
    while(clampForce<100){
     const press= await pressureCharacteristic.readValue();
     number0= await press.getUint8(0);
