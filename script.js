@@ -106,7 +106,9 @@ button.addEventListener("click", async () => {
     var pressure = parseInt(str,16);         //convert to integer
     
     if(pressure>3000){pressure=3000;}
-    clampForce=(.0586*(pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+   // clampForce=(1**(-11**pressure)*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+    clampForce=((.0586*(pressure**1.3934))+50)*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+ 
   } 
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
    // document.getElementById('printForce').innerHTML = '+' + pressure + 'second';
