@@ -107,7 +107,7 @@ button.addEventListener("click", async () => {
     
     if(pressure>3000){pressure=3000;}
    // clampForce=(1**(-11**pressure)*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
-    clampForce=((.0586*(pressure**1.3934))-50)*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
+    clampForce=((.0586*(pressure**1.3934))-150)*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;
  
   } 
     document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
