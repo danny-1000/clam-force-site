@@ -84,7 +84,7 @@ button.addEventListener("click", async () => {
    // document.getElementById('printForce').innerHTML = '+' + pressure2 + 'first';
     if(pressure2>3000){pressure2=3000;}  //was pressure=3000
      
-   if (pressure2>200)
+   if (pressure2>150)  // was 200
    {printFlag=1
     ctx.fillStyle = "grey";
     ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
