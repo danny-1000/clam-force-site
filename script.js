@@ -71,8 +71,8 @@ button.addEventListener("click", async () => {
     
     if((Math.abs(pressOld-pressure))>20)
     { 
-    document.getElementById('printForce').innerHTML = 'calculating';
-    await sleep(1000);
+   // document.getElementById('printForce').innerHTML = 'calculating';
+   // await sleep(500);
     const press= await pressureCharacteristic.readValue();
         number0= await press.getUint8(0);
         number1= await press.getUint8(1); 
@@ -87,7 +87,7 @@ button.addEventListener("click", async () => {
 
     clampForce=.0586*((pressure**1.3934))*info[2]/100; //clampForce=(1.3537*pressure-310)*info[2]/100;  
    // await sleep(3000); 
-  
+  }
     // Check if clampForce is low medium or high
     if (clampForce >= 1001) {
       ctx.fillStyle = "red";
@@ -98,11 +98,10 @@ button.addEventListener("click", async () => {
       ctx.fillStyle = "blue";
       } 
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-       
-    }
-    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
+  
     pressOld=pressure;
-        
+    
+    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';   
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
