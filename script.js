@@ -98,9 +98,9 @@ button.addEventListener("click", async () => {
       ctx.fillStyle = "blue";
       } 
       ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-      document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.'; 
+       
     }
-    
+    document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.';
     pressOld=pressure;
         
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
