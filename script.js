@@ -101,10 +101,8 @@ button.addEventListener("click", async () => {
       document.getElementById('printForce').innerHTML = '+' + clampForce.toFixed(0) + 'lbs.'; 
     }
     
-    
     pressOld=pressure;
-    
-       
+        
     //document.getElementById('printBatteryPercent').innerHTML = 'Battery='+batteryPercent+'%';
    // document.getElementById('serialNumber').innerHTML = info[0];
    // document.getElementById('printPressure').innerHTML = pressure + ' psi' ;
