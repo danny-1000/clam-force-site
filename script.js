@@ -69,7 +69,7 @@ button.addEventListener("click", async () => {
        clampForce=0;
     }
     
-    if((Math.abs(pressOld-pressure))>20)
+    if((Math.abs(pressOld-pressure))>25)
     { 
     document.getElementById('printForce').innerHTML = 'calculating';
    // await sleep(500);
