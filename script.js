@@ -72,7 +72,7 @@ button.addEventListener("click", async () => {
     if((Math.abs(pressOld-pressure))>50)
     { 
     document.getElementById('printForce').innerHTML = 'calculating';
-    await sleep(1000);
+   // await sleep(1000);
     const press= await pressureCharacteristic.readValue();
         number0= await press.getUint8(0);
         number1= await press.getUint8(1); 
