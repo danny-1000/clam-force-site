@@ -84,7 +84,7 @@ button.addEventListener("click", async () => {
     {clampForce=0; 
      pressure=0;
     }         
-    clampForce=((2*pressure)-96)*info[2]/100;
+    clampForce=((2*pressure)-115)*info[2]/100;
    // clampForce=((-.000006*(pressure**3))+(.0178*(pressure**2))+(-13.983*pressure)+4010)*info[2]/100; //clampForce=.0586*((pressure**1.3934))*info[2]/100;  
    //if(clampForce>1250)clampForce=clampForce*.81;
     // await sleep(3000); 
